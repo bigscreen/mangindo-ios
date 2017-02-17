@@ -16,6 +16,7 @@
 		71C50DE21E56EA30004010AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C50DE01E56EA30004010AF /* LaunchScreen.storyboard */; };
 		71C50DED1E56EA30004010AF /* MangindoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DEC1E56EA30004010AF /* MangindoTests.swift */; };
 		71C50DF81E56EA30004010AF /* MangindoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DF71E56EA30004010AF /* MangindoUITests.swift */; };
+		71C50E061E56F7E0004010AF /* NewReleasedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50E051E56F7E0004010AF /* NewReleasedCollectionViewCell.swift */; };
 		C6403E807AAEB10ED6E9D8FD /* Pods_MangindoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE01AC3BBB4DD7FCB27393 /* Pods_MangindoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		71C50DF31E56EA30004010AF /* MangindoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangindoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C50DF71E56EA30004010AF /* MangindoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangindoUITests.swift; sourceTree = "<group>"; };
 		71C50DF91E56EA30004010AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C50E051E56F7E0004010AF /* NewReleasedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56EF9AD9790E38887C4A4DD /* Pods-Mangindo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1223F68ED7F60D2DA75D5D /* Pods-Mangindo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 				71C50DD71E56EA30004010AF /* AppDelegate.swift */,
 				71C50DD91E56EA30004010AF /* ViewController.swift */,
 				71C50DDB1E56EA30004010AF /* Main.storyboard */,
+				71C50E051E56F7E0004010AF /* NewReleasedCollectionViewCell.swift */,
 				71C50DDE1E56EA30004010AF /* Assets.xcassets */,
 				71C50DE01E56EA30004010AF /* LaunchScreen.storyboard */,
 				71C50DE31E56EA30004010AF /* Info.plist */,
@@ -449,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C50DDA1E56EA30004010AF /* ViewController.swift in Sources */,
+				71C50E061E56F7E0004010AF /* NewReleasedCollectionViewCell.swift in Sources */,
 				71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,6 +710,7 @@
 				71C50DFE1E56EA30004010AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71C50DFF1E56EA30004010AF /* Build configuration list for PBXNativeTarget "MangindoTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +719,7 @@
 				71C50E011E56EA30004010AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71C50E021E56EA30004010AF /* Build configuration list for PBXNativeTarget "MangindoUITests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +728,7 @@
 				71C50E041E56EA30004010AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
