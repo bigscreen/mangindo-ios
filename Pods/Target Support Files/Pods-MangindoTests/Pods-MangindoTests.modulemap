@@ -1,0 +1,6 @@
+framework module Pods_MangindoTests {
+  umbrella header "Pods-MangindoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
