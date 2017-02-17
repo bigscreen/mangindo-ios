@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-3B-ZTC">
-                                <rect key="frame" x="0.0" y="30" width="414" height="706"/>
+                                <rect key="frame" x="12" y="30" width="390" height="706"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="twF-Dk-nWo">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="6" id="twF-Dk-nWo">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -65,9 +65,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p8N-3B-ZTC" secondAttribute="bottom" id="CKX-8d-mmW"/>
-                            <constraint firstAttribute="trailing" secondItem="p8N-3B-ZTC" secondAttribute="trailing" id="D1X-qM-29o"/>
+                            <constraint firstItem="p8N-3B-ZTC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="12" id="WyP-JP-EDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="p8N-3B-ZTC" secondAttribute="trailing" constant="12" id="fkd-0c-jUD"/>
                             <constraint firstItem="p8N-3B-ZTC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="qd3-zc-zEZ"/>
-                            <constraint firstItem="p8N-3B-ZTC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zWk-bW-lB2"/>
                         </constraints>
                     </view>
                 </viewController>
