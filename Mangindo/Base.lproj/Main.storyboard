@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-3B-ZTC" userLabel="newReleseCollectionView">
-                                <rect key="frame" x="8" y="12" width="359" height="655"/>
+                                <rect key="frame" x="8" y="8" width="359" height="659"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="6" id="twF-Dk-nWo">
                                     <size key="itemSize" width="113" height="170"/>
@@ -38,20 +39,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A61-wT-Q0V">
-                                                    <rect key="frame" x="35.5" y="74.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A61-wT-Q0V" userLabel="Chapter Label">
+                                                    <rect key="frame" x="29.5" y="143.5" width="54.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWE-kG-pB6" userLabel="Title Label">
+                                                    <rect key="frame" x="10" y="123.5" width="92.5" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dVL-o8-WBs" userLabel="Manga Icon">
+                                                    <rect key="frame" x="8" y="8" width="97" height="109.5"/>
+                                                    <color key="backgroundColor" red="0.064508322060897308" green="0.60151320047157364" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="A61-wT-Q0V" firstAttribute="centerY" secondItem="Crg-Xd-Qyf" secondAttribute="centerY" id="Nme-W8-FX3"/>
+                                            <constraint firstItem="dVL-o8-WBs" firstAttribute="leading" secondItem="Crg-Xd-Qyf" secondAttribute="leadingMargin" id="2rd-FF-yvN"/>
+                                            <constraint firstItem="dVL-o8-WBs" firstAttribute="top" secondItem="Crg-Xd-Qyf" secondAttribute="topMargin" id="8MI-bD-kyy"/>
+                                            <constraint firstItem="LWE-kG-pB6" firstAttribute="leading" secondItem="Crg-Xd-Qyf" secondAttribute="leadingMargin" constant="2" id="Cav-AJ-F0w"/>
+                                            <constraint firstItem="LWE-kG-pB6" firstAttribute="top" secondItem="dVL-o8-WBs" secondAttribute="bottom" constant="6" id="Feg-Zs-NLn"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="LWE-kG-pB6" secondAttribute="trailing" constant="2" id="G9w-0g-ecH"/>
+                                            <constraint firstItem="LWE-kG-pB6" firstAttribute="centerX" secondItem="Crg-Xd-Qyf" secondAttribute="centerX" id="T84-pN-az2"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="A61-wT-Q0V" secondAttribute="bottom" constant="4" id="TB6-w3-cW8"/>
+                                            <constraint firstItem="A61-wT-Q0V" firstAttribute="top" secondItem="LWE-kG-pB6" secondAttribute="bottom" constant="4" id="ocd-mL-rvf"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="dVL-o8-WBs" secondAttribute="trailing" id="qUL-5H-nfA"/>
                                             <constraint firstItem="A61-wT-Q0V" firstAttribute="centerX" secondItem="Crg-Xd-Qyf" secondAttribute="centerX" id="w0Y-V1-ahV"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="myLabel" destination="A61-wT-Q0V" id="v4x-hB-41u"/>
+                                            <outlet property="imageManga" destination="dVL-o8-WBs" id="1l2-WA-qFn"/>
+                                            <outlet property="labelChapter" destination="A61-wT-Q0V" id="fe7-8S-cBd"/>
+                                            <outlet property="labelTitle" destination="LWE-kG-pB6" id="OjE-2U-HNK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -66,7 +87,7 @@
                             <constraint firstItem="p8N-3B-ZTC" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="GPE-3i-FdK"/>
                             <constraint firstItem="p8N-3B-ZTC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="WyP-JP-EDZ"/>
                             <constraint firstAttribute="trailing" secondItem="p8N-3B-ZTC" secondAttribute="trailing" constant="8" id="fkd-0c-jUD"/>
-                            <constraint firstItem="p8N-3B-ZTC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="12" id="qd3-zc-zEZ"/>
+                            <constraint firstItem="p8N-3B-ZTC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="8" id="qd3-zc-zEZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mangindo" id="hqA-7q-bat" userLabel="Mangindo"/>
@@ -76,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-854" y="16"/>
+            <point key="canvasLocation" x="-1135" y="16"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="paz-Kk-vNQ">
@@ -92,7 +113,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOI-AH-ZY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1609" y="16"/>
+            <point key="canvasLocation" x="-1946" y="16"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,8 @@ import UIKit
 
 class NewReleasedCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelChapter: UILabel!
+    @IBOutlet weak var imageManga: UIImageView!
     
 }

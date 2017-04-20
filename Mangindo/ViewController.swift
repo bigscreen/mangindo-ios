@@ -14,7 +14,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     let reuseIdentifier = "newReleaseCell" // also enter this string as the cell identifier in the storyboard
     
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+    var chaptersu = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    var newReleases: [NewRelease] = MockedData.getNewReleases()
 
 
     override func viewDidLoad() {
@@ -34,14 +35,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let collViewWidth = newReleaseCollectionView.frame.size.width
         let cellWidth = (collViewWidth / 3) - 6;
         let cellHeight = cellWidth * 1.5
-        print("collectionViewWidth= \(collViewWidth), cellWidth=\(cellWidth), cellHeight=\(cellHeight)")
         return CGSize(width: cellWidth, height: cellHeight)
         
     }
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.newReleases.count
     }
     
     // make a cell for each cell index path
@@ -50,8 +50,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! NewReleasedCollectionViewCell
         
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.myLabel.text = self.items[indexPath.item]
+        let newRelease = newReleases[indexPath.item]
+        cell.labelTitle.text = newRelease.title!
+        cell.labelChapter.text = "Chapter \(newRelease.chapter!)"
+        
         cell.backgroundColor = UIColor.green // make cell more visible in our example project
         cell.layer.borderColor = UIColor.darkGray.cgColor
         cell.layer.borderWidth = 1
@@ -70,14 +72,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // change background color when user touches cell
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedCollectionViewCell
-        cell.myLabel.textColor = UIColor.white
+        cell.labelTitle.textColor = UIColor.white
+        cell.labelChapter.textColor = UIColor.white
         cell.backgroundColor = UIColor.darkGray
     }
     
     // change background color back when user releases touch
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedCollectionViewCell
-        cell.myLabel.textColor = UIColor.black
+        cell.labelTitle.textColor = UIColor.black
+        cell.labelChapter.textColor = UIColor.black
         cell.backgroundColor = UIColor.green
     }
 
