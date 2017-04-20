@@ -8,27 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
     
-    let reuseIdentifier = "newReleaseCell" // also enter this string as the cell identifier in the storyboard
-    
-    var chaptersu = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    let newReleaseCellID = "newReleaseCell" // also enter this string as the cell identifier in the storyboard
     var newReleases: [NewRelease] = MockedData.getNewReleases()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - UICollectionViewDataSource protocol
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // set width of collection view cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -36,7 +33,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cellWidth = (collViewWidth / 3) - 6;
         let cellHeight = cellWidth * 1.5
         return CGSize(width: cellWidth, height: cellHeight)
-        
     }
     
     // tell the collection view how many cells to make
@@ -48,7 +44,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! NewReleasedCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedCollectionViewCell
         
         let newRelease = newReleases[indexPath.item]
         cell.labelTitle.text = newRelease.title!
@@ -61,8 +57,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         return cell
     }
-    
-    // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
@@ -84,7 +78,4 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.labelChapter.textColor = UIColor.black
         cell.backgroundColor = UIColor.green
     }
-
-
 }
-

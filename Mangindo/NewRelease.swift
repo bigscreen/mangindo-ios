@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  NewRelease.swift
 //  Mangindo
 //
 //  Created by Gallant Pratama on 4/20/17.
