@@ -11,6 +11,7 @@
 		2B74CDFE77F9B0DD1997751E /* Pods_Mangindo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C52C064566C6C7970852DB /* Pods_Mangindo.framework */; };
 		71B48AF81EA9127F007F8865 /* NewRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF71EA9127F007F8865 /* NewRelease.swift */; };
 		71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF91EA91764007F8865 /* MockedData.swift */; };
+		71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFB1EA92A61007F8865 /* AppColor.swift */; };
 		71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DD71E56EA30004010AF /* AppDelegate.swift */; };
 		71C50DDA1E56EA30004010AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DD91E56EA30004010AF /* ViewController.swift */; };
 		71C50DDD1E56EA30004010AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C50DDB1E56EA30004010AF /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		6EB3671DCF518560E95A0BF2 /* Pods_MangindoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangindoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B48AF71EA9127F007F8865 /* NewRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelease.swift; sourceTree = "<group>"; };
 		71B48AF91EA91764007F8865 /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		71B48AFB1EA92A61007F8865 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		71C50DD41E56EA30004010AF /* Mangindo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mangindo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C50DD71E56EA30004010AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C50DD91E56EA30004010AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				71C50DE31E56EA30004010AF /* Info.plist */,
 				71B48AF71EA9127F007F8865 /* NewRelease.swift */,
 				71B48AF91EA91764007F8865 /* MockedData.swift */,
+				71B48AFB1EA92A61007F8865 /* AppColor.swift */,
 			);
 			path = Mangindo;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				71B48AF81EA9127F007F8865 /* NewRelease.swift in Sources */,
 				71C50E061E56F7E0004010AF /* NewReleasedCollectionViewCell.swift in Sources */,
 				71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */,
+				71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

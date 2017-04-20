@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,15 +46,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedCollectionViewCell
+        initCell(newReleasedCell: cell)
         
         let newRelease = newReleases[indexPath.item]
         cell.labelTitle.text = newRelease.title!
         cell.labelChapter.text = "Chapter \(newRelease.chapter!)"
-        
-        cell.backgroundColor = UIColor.green // make cell more visible in our example project
-        cell.layer.borderColor = UIColor.darkGray.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 5
+        cell.imageManga.backgroundColor = AppColor.greyDark
         
         return cell
     }
@@ -66,16 +64,25 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // change background color when user touches cell
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedCollectionViewCell
-        cell.labelTitle.textColor = UIColor.white
-        cell.labelChapter.textColor = UIColor.white
-        cell.backgroundColor = UIColor.darkGray
+        cell.backgroundColor = AppColor.greyLight
     }
     
     // change background color back when user releases touch
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedCollectionViewCell
-        cell.labelTitle.textColor = UIColor.black
-        cell.labelChapter.textColor = UIColor.black
-        cell.backgroundColor = UIColor.green
+        cell.backgroundColor = UIColor.white
+    }
+    
+    func initCell(newReleasedCell: NewReleasedCollectionViewCell) {
+        newReleasedCell.backgroundColor = UIColor.white
+        newReleasedCell.layer.cornerRadius = 3
+        newReleasedCell.layer.borderWidth = 0.4
+        newReleasedCell.layer.borderColor = AppColor.greyDark.cgColor
+        newReleasedCell.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        newReleasedCell.layer.shadowColor = AppColor.greyDark.cgColor
+        newReleasedCell.layer.shadowRadius = 1.5
+        newReleasedCell.layer.shadowOpacity = 0.5
+        newReleasedCell.layer.masksToBounds = false
+        newReleasedCell.clipsToBounds = false
     }
 }
