@@ -28,19 +28,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYl-v3-ptr" userLabel="Label Title">
-                                <rect key="frame" x="4" y="122.5" width="101" height="16"/>
+                                <rect key="frame" x="4" y="123.5" width="101" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zll-BJ-Lx0" userLabel="Image Cover">
-                                <rect key="frame" x="4" y="4" width="101" height="110.5"/>
+                                <rect key="frame" x="4" y="4" width="101" height="112.5"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zll-BJ-Lx0" firstAttribute="top" secondItem="Dat-yS-tjr" secondAttribute="top" constant="4" id="5iD-gx-CVM"/>
-                            <constraint firstItem="ixi-eJ-mlG" firstAttribute="top" secondItem="cYl-v3-ptr" secondAttribute="bottom" constant="4" id="9xP-7D-5gd"/>
+                            <constraint firstItem="ixi-eJ-mlG" firstAttribute="top" secondItem="cYl-v3-ptr" secondAttribute="bottom" constant="3" id="9xP-7D-5gd"/>
                             <constraint firstItem="zll-BJ-Lx0" firstAttribute="leading" secondItem="Dat-yS-tjr" secondAttribute="leading" constant="4" id="Acq-yT-2Yh"/>
                             <constraint firstItem="ixi-eJ-mlG" firstAttribute="leading" secondItem="Dat-yS-tjr" secondAttribute="leading" constant="4" id="KY2-kK-yVi"/>
                             <constraint firstAttribute="trailing" secondItem="zll-BJ-Lx0" secondAttribute="trailing" constant="4" id="Wqd-at-E7w"/>
@@ -48,7 +48,7 @@
                             <constraint firstItem="cYl-v3-ptr" firstAttribute="leading" secondItem="Dat-yS-tjr" secondAttribute="leading" constant="4" id="nl9-11-Gw5"/>
                             <constraint firstAttribute="bottom" secondItem="ixi-eJ-mlG" secondAttribute="bottom" constant="8" id="qbK-0X-Uud"/>
                             <constraint firstAttribute="trailing" secondItem="ixi-eJ-mlG" secondAttribute="trailing" constant="4" id="sol-ik-shu"/>
-                            <constraint firstItem="cYl-v3-ptr" firstAttribute="top" secondItem="zll-BJ-Lx0" secondAttribute="bottom" constant="8" id="wId-vh-RTD"/>
+                            <constraint firstItem="cYl-v3-ptr" firstAttribute="top" secondItem="zll-BJ-Lx0" secondAttribute="bottom" constant="7" id="wId-vh-RTD"/>
                         </constraints>
                     </view>
                 </subviews>
