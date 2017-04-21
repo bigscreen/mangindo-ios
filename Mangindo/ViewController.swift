@@ -12,8 +12,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
     
-    let newReleaseCellID = "newReleaseCell" // also enter this string as the cell identifier in the storyboard
+    let newReleaseCellID = "newReleaseCell"
     var newReleases: [NewRelease] = MockedData.getNewReleases()
+    var chapters: [Chapter] = MockedData.getChapters()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,13 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showChapters" {
+            let controller = segue.destination as! ChaptersViewController
+            controller.chapters = self.chapters
+        }
     }
     
 }
@@ -56,9 +64,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         return cell
     }
     
+    // handle tap events
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        self.performSegue(withIdentifier: "showChapters", sender: self)
     }
     
     // change background color when user touches cell

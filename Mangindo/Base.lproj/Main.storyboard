@@ -52,21 +52,21 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dVL-o8-WBs" userLabel="Manga Icon">
-                                                    <rect key="frame" x="8" y="8" width="97" height="109.5"/>
+                                                    <rect key="frame" x="6" y="6" width="101" height="111.5"/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="dVL-o8-WBs" firstAttribute="leading" secondItem="Crg-Xd-Qyf" secondAttribute="leadingMargin" id="2rd-FF-yvN"/>
-                                            <constraint firstItem="dVL-o8-WBs" firstAttribute="top" secondItem="Crg-Xd-Qyf" secondAttribute="topMargin" id="8MI-bD-kyy"/>
+                                            <constraint firstItem="dVL-o8-WBs" firstAttribute="leading" secondItem="Crg-Xd-Qyf" secondAttribute="leadingMargin" constant="-2" id="2rd-FF-yvN"/>
+                                            <constraint firstItem="dVL-o8-WBs" firstAttribute="top" secondItem="Crg-Xd-Qyf" secondAttribute="topMargin" constant="-2" id="8MI-bD-kyy"/>
                                             <constraint firstItem="LWE-kG-pB6" firstAttribute="leading" secondItem="Crg-Xd-Qyf" secondAttribute="leadingMargin" constant="2" id="Cav-AJ-F0w"/>
                                             <constraint firstItem="LWE-kG-pB6" firstAttribute="top" secondItem="dVL-o8-WBs" secondAttribute="bottom" constant="6" id="Feg-Zs-NLn"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="LWE-kG-pB6" secondAttribute="trailing" constant="2" id="G9w-0g-ecH"/>
                                             <constraint firstItem="LWE-kG-pB6" firstAttribute="centerX" secondItem="Crg-Xd-Qyf" secondAttribute="centerX" id="T84-pN-az2"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="A61-wT-Q0V" secondAttribute="bottom" constant="4" id="TB6-w3-cW8"/>
                                             <constraint firstItem="A61-wT-Q0V" firstAttribute="top" secondItem="LWE-kG-pB6" secondAttribute="bottom" constant="4" id="ocd-mL-rvf"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="dVL-o8-WBs" secondAttribute="trailing" id="qUL-5H-nfA"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="dVL-o8-WBs" secondAttribute="trailing" constant="-2" id="qUL-5H-nfA"/>
                                             <constraint firstItem="A61-wT-Q0V" firstAttribute="centerX" secondItem="Crg-Xd-Qyf" secondAttribute="centerX" id="w0Y-V1-ahV"/>
                                         </constraints>
                                         <connections>
@@ -90,14 +90,57 @@
                             <constraint firstItem="p8N-3B-ZTC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="8" id="qd3-zc-zEZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Mangindo" id="hqA-7q-bat" userLabel="Mangindo"/>
+                    <navigationItem key="navigationItem" title="Mangindo" id="hqA-7q-bat"/>
                     <connections>
                         <outlet property="newReleaseCollectionView" destination="p8N-3B-ZTC" id="3gC-LC-nPJ"/>
+                        <segue destination="Qju-3t-beh" kind="show" identifier="showChapters" id="Dvm-TJ-eCr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1135" y="16"/>
+            <point key="canvasLocation" x="-1130" y="16"/>
+        </scene>
+        <!--Chapters-->
+        <scene sceneID="fh0-UV-Qfr">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Qju-3t-beh" userLabel="Chapters" customClass="ChaptersViewController" customModule="Mangindo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AZN-bk-zw9"/>
+                        <viewControllerLayoutGuide type="bottom" id="4YJ-3Y-FbF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e1v-tg-A9m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-cw-Hvc" userLabel="Chapters Table View">
+                                <rect key="frame" x="16" y="72" width="343" height="595"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="2" right="0.0"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qju-3t-beh" id="Xwr-VG-Zgl"/>
+                                    <outlet property="delegate" destination="Qju-3t-beh" id="XeN-jI-u9N"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aid-cw-Hvc" firstAttribute="leading" secondItem="e1v-tg-A9m" secondAttribute="leadingMargin" id="CMQ-fl-qNw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aid-cw-Hvc" secondAttribute="trailing" id="DNo-ER-H1S"/>
+                            <constraint firstItem="Aid-cw-Hvc" firstAttribute="top" secondItem="AZN-bk-zw9" secondAttribute="bottom" constant="8" id="hWi-1z-Z9u"/>
+                            <constraint firstItem="4YJ-3Y-FbF" firstAttribute="top" secondItem="Aid-cw-Hvc" secondAttribute="bottom" id="rqd-MU-ame"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chapters" id="xPe-xH-VeX" userLabel="Chapters">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="tTU-5i-eBc"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Aid-cw-Hvc" id="ycF-N2-BrG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNr-hU-2uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="16"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="paz-Kk-vNQ">
