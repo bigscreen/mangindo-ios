@@ -12,7 +12,12 @@ class ChapterViewCell: UITableViewCell {
     
     @IBOutlet weak var labelChapter: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
-
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
     var chapterNumber: String? {
         didSet {
             if let number = chapterNumber {
@@ -27,11 +32,6 @@ class ChapterViewCell: UITableViewCell {
                 labelTitle.text = title
             }
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
     }
     
 }
