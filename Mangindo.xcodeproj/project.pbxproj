@@ -11,6 +11,8 @@
 		2B74CDFE77F9B0DD1997751E /* Pods_Mangindo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C52C064566C6C7970852DB /* Pods_Mangindo.framework */; };
 		71104E7F1EA9FD760007C591 /* ChapterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71104E7D1EA9FD760007C591 /* ChapterViewCell.swift */; };
 		71104E801EA9FD760007C591 /* ChapterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */; };
+		71104E8A1EAA22500007C591 /* NewReleasedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71104E881EAA22500007C591 /* NewReleasedViewCell.swift */; };
+		71104E8B1EAA22500007C591 /* NewReleasedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71104E891EAA22500007C591 /* NewReleasedViewCell.xib */; };
 		71B48AF81EA9127F007F8865 /* NewRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF71EA9127F007F8865 /* NewRelease.swift */; };
 		71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF91EA91764007F8865 /* MockedData.swift */; };
 		71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFB1EA92A61007F8865 /* AppColor.swift */; };
@@ -23,7 +25,6 @@
 		71C50DE21E56EA30004010AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C50DE01E56EA30004010AF /* LaunchScreen.storyboard */; };
 		71C50DED1E56EA30004010AF /* MangindoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DEC1E56EA30004010AF /* MangindoTests.swift */; };
 		71C50DF81E56EA30004010AF /* MangindoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DF71E56EA30004010AF /* MangindoUITests.swift */; };
-		71C50E061E56F7E0004010AF /* NewReleasedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50E051E56F7E0004010AF /* NewReleasedCollectionViewCell.swift */; };
 		C6403E807AAEB10ED6E9D8FD /* Pods_MangindoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE01AC3BBB4DD7FCB27393 /* Pods_MangindoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		6EB3671DCF518560E95A0BF2 /* Pods_MangindoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangindoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71104E7D1EA9FD760007C591 /* ChapterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChapterViewCell.swift; path = Cells/ChapterViewCell.swift; sourceTree = "<group>"; };
 		71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChapterViewCell.xib; path = Cells/ChapterViewCell.xib; sourceTree = "<group>"; };
+		71104E881EAA22500007C591 /* NewReleasedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasedViewCell.swift; sourceTree = "<group>"; };
+		71104E891EAA22500007C591 /* NewReleasedViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewReleasedViewCell.xib; sourceTree = "<group>"; };
 		71B48AF71EA9127F007F8865 /* NewRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelease.swift; sourceTree = "<group>"; };
 		71B48AF91EA91764007F8865 /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		71B48AFB1EA92A61007F8865 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -72,7 +75,6 @@
 		71C50DF31E56EA30004010AF /* MangindoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangindoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C50DF71E56EA30004010AF /* MangindoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangindoUITests.swift; sourceTree = "<group>"; };
 		71C50DF91E56EA30004010AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71C50E051E56F7E0004010AF /* NewReleasedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56EF9AD9790E38887C4A4DD /* Pods-Mangindo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1223F68ED7F60D2DA75D5D /* Pods-Mangindo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,8 @@
 			children = (
 				71104E7D1EA9FD760007C591 /* ChapterViewCell.swift */,
 				71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */,
+				71104E881EAA22500007C591 /* NewReleasedViewCell.swift */,
+				71104E891EAA22500007C591 /* NewReleasedViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -176,7 +180,6 @@
 				71C50DD71E56EA30004010AF /* AppDelegate.swift */,
 				71C50DD91E56EA30004010AF /* ViewController.swift */,
 				71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */,
-				71C50E051E56F7E0004010AF /* NewReleasedCollectionViewCell.swift */,
 				71C50DE01E56EA30004010AF /* LaunchScreen.storyboard */,
 				71C50DDB1E56EA30004010AF /* Main.storyboard */,
 				71C50DE31E56EA30004010AF /* Info.plist */,
@@ -334,6 +337,7 @@
 				71C50DE21E56EA30004010AF /* LaunchScreen.storyboard in Resources */,
 				71C50DDF1E56EA30004010AF /* Assets.xcassets in Resources */,
 				71104E801EA9FD760007C591 /* ChapterViewCell.xib in Resources */,
+				71104E8B1EAA22500007C591 /* NewReleasedViewCell.xib in Resources */,
 				71C50DDD1E56EA30004010AF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,11 +501,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71104E8A1EAA22500007C591 /* NewReleasedViewCell.swift in Sources */,
 				71104E7F1EA9FD760007C591 /* ChapterViewCell.swift in Sources */,
 				71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */,
 				71C50DDA1E56EA30004010AF /* ViewController.swift in Sources */,
 				71B48AF81EA9127F007F8865 /* NewRelease.swift in Sources */,
-				71C50E061E56F7E0004010AF /* NewReleasedCollectionViewCell.swift in Sources */,
 				71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */,
 				71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */,
 				71B48B001EA9C5EA007F8865 /* Chapter.swift in Sources */,

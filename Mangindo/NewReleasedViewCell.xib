@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewReleasedViewCell" id="gTV-IL-0wX" customClass="NewReleasedViewCell" customModule="Mangindo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="113" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="113" height="170"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dat-yS-tjr" userLabel="View Card">
+                        <rect key="frame" x="2" y="1" width="109" height="165"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixi-eJ-mlG" userLabel="Label Chapter">
+                                <rect key="frame" x="4" y="142.5" width="101" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYl-v3-ptr" userLabel="Label Title">
+                                <rect key="frame" x="4" y="122.5" width="101" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zll-BJ-Lx0" userLabel="Image Cover">
+                                <rect key="frame" x="4" y="4" width="101" height="110.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zll-BJ-Lx0" firstAttribute="top" secondItem="Dat-yS-tjr" secondAttribute="top" constant="4" id="5iD-gx-CVM"/>
+                            <constraint firstItem="ixi-eJ-mlG" firstAttribute="top" secondItem="cYl-v3-ptr" secondAttribute="bottom" constant="4" id="9xP-7D-5gd"/>
+                            <constraint firstItem="zll-BJ-Lx0" firstAttribute="leading" secondItem="Dat-yS-tjr" secondAttribute="leading" constant="4" id="Acq-yT-2Yh"/>
+                            <constraint firstItem="ixi-eJ-mlG" firstAttribute="leading" secondItem="Dat-yS-tjr" secondAttribute="leading" constant="4" id="KY2-kK-yVi"/>
+                            <constraint firstAttribute="trailing" secondItem="zll-BJ-Lx0" secondAttribute="trailing" constant="4" id="Wqd-at-E7w"/>
+                            <constraint firstAttribute="trailing" secondItem="cYl-v3-ptr" secondAttribute="trailing" constant="4" id="Y6o-9D-GEQ"/>
+                            <constraint firstItem="cYl-v3-ptr" firstAttribute="leading" secondItem="Dat-yS-tjr" secondAttribute="leading" constant="4" id="nl9-11-Gw5"/>
+                            <constraint firstAttribute="bottom" secondItem="ixi-eJ-mlG" secondAttribute="bottom" constant="8" id="qbK-0X-Uud"/>
+                            <constraint firstAttribute="trailing" secondItem="ixi-eJ-mlG" secondAttribute="trailing" constant="4" id="sol-ik-shu"/>
+                            <constraint firstItem="cYl-v3-ptr" firstAttribute="top" secondItem="zll-BJ-Lx0" secondAttribute="bottom" constant="8" id="wId-vh-RTD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Dat-yS-tjr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="7Qp-zx-44W"/>
+                <constraint firstAttribute="bottom" secondItem="Dat-yS-tjr" secondAttribute="bottom" constant="4" id="cBL-46-uHd"/>
+                <constraint firstItem="Dat-yS-tjr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="hgt-Ha-Zcb"/>
+                <constraint firstAttribute="trailing" secondItem="Dat-yS-tjr" secondAttribute="trailing" constant="2" id="rQ4-FX-SYT"/>
+            </constraints>
+            <connections>
+                <outlet property="imageCover" destination="zll-BJ-Lx0" id="SUA-Eu-bQO"/>
+                <outlet property="labelChapter" destination="ixi-eJ-mlG" id="KLC-E8-3FL"/>
+                <outlet property="labelTitle" destination="cYl-v3-ptr" id="tol-RR-0RQ"/>
+                <outlet property="viewCard" destination="Dat-yS-tjr" id="uzB-tQ-Bfg"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -11,13 +11,15 @@ import UIKit
 class ChaptersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     let chapterCellID = "ChapterViewCell"
-    var chapters: [Chapter] = []
+    var chapters: [Chapter] = MockedData.getChapters()
+    var pageTitle: String = "Chapters"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = pageTitle
         setupTableView()
-        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     func setupTableView() {
@@ -39,6 +41,7 @@ extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellID, for: indexPath as IndexPath) as! ChapterViewCell
         cell.backgroundColor = UIColor.white
+        cell.selectionStyle = .none
         
         let chapter: Chapter = chapters[indexPath.row]
         cell.chapterNumber = chapter.number

@@ -12,23 +12,29 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
     
-    let newReleaseCellID = "newReleaseCell"
+    let newReleaseCellID = "NewReleasedViewCell"
     var newReleases: [NewRelease] = MockedData.getNewReleases()
-    var chapters: [Chapter] = MockedData.getChapters()
+    
+    var selectedTitle: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.statusBarStyle = .lightContent
+        setupCollectionView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    func setupCollectionView() {
+        newReleaseCollectionView.register(UINib(nibName: "NewReleasedViewCell", bundle: nil), forCellWithReuseIdentifier: newReleaseCellID)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showChapters" {
             let controller = segue.destination as! ChaptersViewController
-            controller.chapters = self.chapters
+            controller.pageTitle = selectedTitle
         }
     }
     
@@ -39,7 +45,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // set width of collection view cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collViewWidth = newReleaseCollectionView.frame.size.width
-        let cellWidth = (collViewWidth / 3) - 6;
+        let cellWidth = collViewWidth / 3;
         let cellHeight = cellWidth * 1.5
         return CGSize(width: cellWidth, height: cellHeight)
     }
@@ -51,47 +57,32 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedCollectionViewCell
-        initCell(newReleasedCell: cell)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedViewCell
         
         let newRelease = newReleases[indexPath.item]
-        cell.labelTitle.text = newRelease.title!
-        cell.labelChapter.text = "Chapter \(newRelease.chapter!)"
-        cell.imageManga.backgroundColor = AppColor.greyDark
+        cell.mangaTitle = newRelease.title
+        cell.mangaChapter = newRelease.chapter
+        cell.imageCover.backgroundColor = AppColor.greyDark
         
         return cell
     }
     
     // handle tap events
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.item)!")
+        selectedTitle = newReleases[indexPath.item].title!
         self.performSegue(withIdentifier: "showChapters", sender: self)
     }
     
     // change background color when user touches cell
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedCollectionViewCell
-        cell.backgroundColor = AppColor.greyLight
+        let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedViewCell
+        cell.setHighlighted()
     }
     
     // change background color back when user releases touch
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedCollectionViewCell
+        let cell = collectionView.cellForItem(at: indexPath) as! NewReleasedViewCell
         cell.backgroundColor = UIColor.white
-    }
-    
-    func initCell(newReleasedCell: NewReleasedCollectionViewCell) {
-        newReleasedCell.backgroundColor = UIColor.white
-        newReleasedCell.layer.cornerRadius = 3
-        newReleasedCell.layer.borderWidth = 0.4
-        newReleasedCell.layer.borderColor = AppColor.greyDark.cgColor
-        newReleasedCell.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        newReleasedCell.layer.shadowColor = AppColor.greyDark.cgColor
-        newReleasedCell.layer.shadowRadius = 1.5
-        newReleasedCell.layer.shadowOpacity = 0.5
-        newReleasedCell.layer.masksToBounds = false
-        newReleasedCell.clipsToBounds = false
+        cell.setUnhighlighted()
     }
 }
