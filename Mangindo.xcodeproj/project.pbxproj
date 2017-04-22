@@ -13,7 +13,10 @@
 		71104E801EA9FD760007C591 /* ChapterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */; };
 		71104E8A1EAA22500007C591 /* NewReleasedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71104E881EAA22500007C591 /* NewReleasedViewCell.swift */; };
 		71104E8B1EAA22500007C591 /* NewReleasedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71104E891EAA22500007C591 /* NewReleasedViewCell.xib */; };
-		71B48AF81EA9127F007F8865 /* NewRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF71EA9127F007F8865 /* NewRelease.swift */; };
+		71617F6E1EAA79C10067A8D7 /* NewReleaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F6D1EAA79C10067A8D7 /* NewReleaseLoader.swift */; };
+		71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F6F1EAA7A560067A8D7 /* ApiURL.swift */; };
+		71617F741EAB98D90067A8D7 /* NewReleasedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F731EAB98D90067A8D7 /* NewReleasedResponse.swift */; };
+		71617F761EAB9AA80067A8D7 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F751EAB9AA80067A8D7 /* Comic.swift */; };
 		71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF91EA91764007F8865 /* MockedData.swift */; };
 		71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFB1EA92A61007F8865 /* AppColor.swift */; };
 		71B48B001EA9C5EA007F8865 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFF1EA9C5EA007F8865 /* Chapter.swift */; };
@@ -55,12 +58,15 @@
 		6EB3671DCF518560E95A0BF2 /* Pods_MangindoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangindoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71104E7D1EA9FD760007C591 /* ChapterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChapterViewCell.swift; path = Cells/ChapterViewCell.swift; sourceTree = "<group>"; };
 		71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChapterViewCell.xib; path = Cells/ChapterViewCell.xib; sourceTree = "<group>"; };
-		71104E881EAA22500007C591 /* NewReleasedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasedViewCell.swift; sourceTree = "<group>"; };
-		71104E891EAA22500007C591 /* NewReleasedViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewReleasedViewCell.xib; sourceTree = "<group>"; };
-		71B48AF71EA9127F007F8865 /* NewRelease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRelease.swift; sourceTree = "<group>"; };
-		71B48AF91EA91764007F8865 /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
-		71B48AFB1EA92A61007F8865 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		71B48AFF1EA9C5EA007F8865 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		71104E881EAA22500007C591 /* NewReleasedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewReleasedViewCell.swift; path = Cells/NewReleasedViewCell.swift; sourceTree = "<group>"; };
+		71104E891EAA22500007C591 /* NewReleasedViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewReleasedViewCell.xib; path = Cells/NewReleasedViewCell.xib; sourceTree = "<group>"; };
+		71617F6D1EAA79C10067A8D7 /* NewReleaseLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewReleaseLoader.swift; path = Networking/NewReleaseLoader.swift; sourceTree = "<group>"; };
+		71617F6F1EAA7A560067A8D7 /* ApiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiURL.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Networking/ApiURL.swift; sourceTree = "<absolute>"; };
+		71617F731EAB98D90067A8D7 /* NewReleasedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewReleasedResponse.swift; path = Models/NewReleasedResponse.swift; sourceTree = "<group>"; };
+		71617F751EAB9AA80067A8D7 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comic.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Models/Comic.swift; sourceTree = "<absolute>"; };
+		71B48AF91EA91764007F8865 /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockedData.swift; path = Common/MockedData.swift; sourceTree = "<group>"; };
+		71B48AFB1EA92A61007F8865 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColor.swift; path = Common/AppColor.swift; sourceTree = "<group>"; };
+		71B48AFF1EA9C5EA007F8865 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chapter.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Models/Chapter.swift; sourceTree = "<absolute>"; };
 		71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
 		71C50DD41E56EA30004010AF /* Mangindo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mangindo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C50DD71E56EA30004010AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,8 +140,9 @@
 		71104E861EAA1E950007C591 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				71B48AF71EA9127F007F8865 /* NewRelease.swift */,
+				71617F751EAB9AA80067A8D7 /* Comic.swift */,
 				71B48AFF1EA9C5EA007F8865 /* Chapter.swift */,
+				71617F731EAB98D90067A8D7 /* NewReleasedResponse.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -147,6 +154,15 @@
 				71B48AF91EA91764007F8865 /* MockedData.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		71617F6C1EAA796C0067A8D7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				71617F6D1EAA79C10067A8D7 /* NewReleaseLoader.swift */,
+				71617F6F1EAA7A560067A8D7 /* ApiURL.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		71C50DCB1E56EA30004010AF = {
@@ -177,6 +193,7 @@
 				71104E871EAA1EB40007C591 /* Common */,
 				71104E861EAA1E950007C591 /* Models */,
 				71104E811EA9FD7B0007C591 /* Cells */,
+				71617F6C1EAA796C0067A8D7 /* Networking */,
 				71C50DD71E56EA30004010AF /* AppDelegate.swift */,
 				71C50DD91E56EA30004010AF /* ViewController.swift */,
 				71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */,
@@ -504,11 +521,14 @@
 				71104E8A1EAA22500007C591 /* NewReleasedViewCell.swift in Sources */,
 				71104E7F1EA9FD760007C591 /* ChapterViewCell.swift in Sources */,
 				71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */,
+				71617F6E1EAA79C10067A8D7 /* NewReleaseLoader.swift in Sources */,
+				71617F741EAB98D90067A8D7 /* NewReleasedResponse.swift in Sources */,
 				71C50DDA1E56EA30004010AF /* ViewController.swift in Sources */,
-				71B48AF81EA9127F007F8865 /* NewRelease.swift in Sources */,
 				71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */,
+				71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */,
 				71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */,
 				71B48B001EA9C5EA007F8865 /* Chapter.swift in Sources */,
+				71617F761EAB9AA80067A8D7 /* Comic.swift in Sources */,
 				71B48B021EA9E8F4007F8865 /* ChaptersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

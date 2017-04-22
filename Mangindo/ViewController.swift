@@ -8,19 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, NewReleaseProtocol {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
     
     let newReleaseCellID = "NewReleasedViewCell"
-    var newReleases: [NewRelease] = MockedData.getNewReleases()
+    var newReleasedComics: [Comic] = []
     
     var selectedTitle: String = ""
+    var loader: NewReleaseLoader?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.statusBarStyle = .lightContent
         setupCollectionView()
+        loader = NewReleaseLoader(callback: self as NewReleaseProtocol)
+        loader?.getNewRelease()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +41,14 @@ class ViewController: UIViewController {
         }
     }
     
+    func onSuccess(newReleasedComics: [Comic]) {
+        self.newReleasedComics = newReleasedComics
+        newReleaseCollectionView.reloadData()
+    }
+    
+    func onError(message: String) {
+        
+    }
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -52,16 +63,16 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.newReleases.count
+        return newReleasedComics.count
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedViewCell
         
-        let newRelease = newReleases[indexPath.item]
-        cell.mangaTitle = newRelease.title
-        cell.mangaChapter = newRelease.chapter
+        let comic = newReleasedComics[indexPath.item]
+        cell.mangaTitle = comic.getTitle()
+        cell.mangaChapter = comic.getNewChapter()
         cell.imageCover.backgroundColor = AppColor.greyDark
         
         return cell
@@ -69,7 +80,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     // handle tap events
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedTitle = newReleases[indexPath.item].title!
+        selectedTitle = newReleasedComics[indexPath.item].getTitle()
         self.performSegue(withIdentifier: "showChapters", sender: self)
     }
     
