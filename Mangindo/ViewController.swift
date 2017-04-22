@@ -12,6 +12,7 @@ import SDWebImage
 class ViewController: UIViewController, NewReleaseProtocol {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     let newReleaseCellID = "NewReleasedViewCell"
     var newReleasedComics: [Comic] = []
@@ -45,13 +46,26 @@ class ViewController: UIViewController, NewReleaseProtocol {
         }
     }
     
+    func startLoading() {
+        loadingIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        loadingIndicator.stopAnimating()
+    }
+    
     func onSuccess(newReleasedComics: [Comic]) {
         self.newReleasedComics = newReleasedComics
         newReleaseCollectionView.reloadData()
     }
     
     func onError(message: String) {
-        
+        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { action in
+            self.loader?.getNewRelease()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

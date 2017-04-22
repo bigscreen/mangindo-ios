@@ -19,19 +19,23 @@ class ChaptersLoader {
     }
     
     func getChapters() {
+        callback?.startLoading()
         let url = "\(ApiURL.chapters)?manga=\(comicTitleId!)"
         Alamofire.request(url).responseJSON { response in
             guard response.result.isSuccess else {
                 print("Error, \(response.result.error)")
-                self.callback?.onError(message: "Error fething data \(response.result.error).")
+                self.callback?.stopLoading()
+                self.callback?.onError(message: "Could not fetch data.")
                 return
             }
             guard let responseJSON = response.result.value as? [String: Any] else {
                 print("Error, Could not parse data")
-                self.callback?.onError(message: "Error fething data.")
+                self.callback?.stopLoading()
+                self.callback?.onError(message: "Could not fetch data.")
                 return
             }
             let chapterResponse = ChaptersResponse(map: responseJSON)
+            self.callback?.stopLoading()
             self.callback?.onSuccess(chapters: chapterResponse.getChapters())
         }
     }
@@ -39,6 +43,8 @@ class ChaptersLoader {
 }
 
 protocol ChaptersProtocol: class {
+    func startLoading()
+    func stopLoading()
     func onSuccess(chapters: [Chapter])
     func onError(message: String)
 }

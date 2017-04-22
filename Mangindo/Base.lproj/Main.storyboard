@@ -37,10 +37,20 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Teo-FE-dlu"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ymI-gK-sOg" userLabel="Loading Indicator">
+                                <rect key="frame" x="169.5" y="315.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="8hg-R4-NU4"/>
+                                    <constraint firstAttribute="height" constant="35" id="VuR-fg-iXa"/>
+                                </constraints>
+                                <color key="color" red="0.71764705882352942" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ymI-gK-sOg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3l9-j8-wHF"/>
                             <constraint firstItem="p8N-3B-ZTC" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="GPE-3i-FdK"/>
+                            <constraint firstItem="ymI-gK-sOg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lwy-1i-786"/>
                             <constraint firstItem="p8N-3B-ZTC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="4" id="WyP-JP-EDZ"/>
                             <constraint firstAttribute="trailing" secondItem="p8N-3B-ZTC" secondAttribute="trailing" constant="4" id="fkd-0c-jUD"/>
                             <constraint firstItem="p8N-3B-ZTC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="4" id="qd3-zc-zEZ"/>
@@ -50,6 +60,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="GCa-70-1nP"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="ymI-gK-sOg" id="sge-dW-DRO"/>
                         <outlet property="newReleaseCollectionView" destination="p8N-3B-ZTC" id="3gC-LC-nPJ"/>
                         <segue destination="Qju-3t-beh" kind="show" identifier="showChapters" id="Dvm-TJ-eCr"/>
                     </connections>
@@ -80,19 +91,30 @@
                                     <outlet property="delegate" destination="Qju-3t-beh" id="XeN-jI-u9N"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="X8i-QB-uBD">
+                                <rect key="frame" x="169.5" y="315.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="249-6H-6zo"/>
+                                    <constraint firstAttribute="width" constant="35" id="8dy-nn-kAF"/>
+                                </constraints>
+                                <color key="color" red="0.71764705880000002" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Aid-cw-Hvc" firstAttribute="leading" secondItem="e1v-tg-A9m" secondAttribute="leadingMargin" constant="-17.5" id="CMQ-fl-qNw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Aid-cw-Hvc" secondAttribute="trailing" constant="-17.5" id="DNo-ER-H1S"/>
+                            <constraint firstItem="X8i-QB-uBD" firstAttribute="centerX" secondItem="e1v-tg-A9m" secondAttribute="centerX" id="Zh0-uf-Fcg"/>
                             <constraint firstItem="Aid-cw-Hvc" firstAttribute="top" secondItem="AZN-bk-zw9" secondAttribute="bottom" id="hWi-1z-Z9u"/>
                             <constraint firstItem="4YJ-3Y-FbF" firstAttribute="top" secondItem="Aid-cw-Hvc" secondAttribute="bottom" id="rqd-MU-ame"/>
+                            <constraint firstItem="X8i-QB-uBD" firstAttribute="centerY" secondItem="e1v-tg-A9m" secondAttribute="centerY" id="xwG-S5-GdA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chapters" id="xPe-xH-VeX" userLabel="Chapters">
                         <barButtonItem key="backBarButtonItem" title="Back" id="tTU-5i-eBc"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="X8i-QB-uBD" id="bfv-OH-DTV"/>
                         <outlet property="tableView" destination="Aid-cw-Hvc" id="ycF-N2-BrG"/>
                     </connections>
                 </viewController>

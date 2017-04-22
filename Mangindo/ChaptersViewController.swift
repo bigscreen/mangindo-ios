@@ -11,6 +11,7 @@ import UIKit
 class ChaptersViewController: UIViewController, ChaptersProtocol {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     let chapterCellID = "ChapterViewCell"
     var chapters: [Chapter] = []
@@ -32,13 +33,26 @@ class ChaptersViewController: UIViewController, ChaptersProtocol {
         tableView.register(UINib(nibName: "ChapterViewCell", bundle: nil), forCellReuseIdentifier: "ChapterViewCell")
     }
     
+    func startLoading() {
+        loadingIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        loadingIndicator.stopAnimating()
+    }
+    
     func onSuccess(chapters: [Chapter]) {
         self.chapters = chapters
         tableView.reloadData()
     }
     
     func onError(message: String) {
-        
+        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { action in
+            self.loader?.getChapters()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

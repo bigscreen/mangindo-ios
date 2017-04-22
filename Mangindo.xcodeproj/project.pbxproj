@@ -133,10 +133,10 @@
 		71104E811EA9FD7B0007C591 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				71104E7D1EA9FD760007C591 /* ChapterViewCell.swift */,
-				71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */,
 				71104E881EAA22500007C591 /* NewReleasedViewCell.swift */,
 				71104E891EAA22500007C591 /* NewReleasedViewCell.xib */,
+				71104E7D1EA9FD760007C591 /* ChapterViewCell.swift */,
+				71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 		71617F6C1EAA796C0067A8D7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				71617F771EABC4700067A8D7 /* ChaptersLoader.swift */,
 				71617F6D1EAA79C10067A8D7 /* NewReleaseLoader.swift */,
+				71617F771EABC4700067A8D7 /* ChaptersLoader.swift */,
 				71617F6F1EAA7A560067A8D7 /* ApiURL.swift */,
 			);
 			name = Networking;
