@@ -15,30 +15,19 @@ class ChapterViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-    
-    var chapterNumber: String? {
-        didSet {
-            if let number = chapterNumber {
-                labelChapter.text = "Chapter \(number)"
-            }
-        }
-    }
-    
-    var chapterTitle: String? {
-        didSet {
-            if let title = chapterTitle {
-                labelTitle.text = title
-            }
-        }
     }
     
     var comicChapter: Chapter? {
         didSet {
             if let chapter = comicChapter {
-                labelChapter.text = chapter.getTitle()
-                labelTitle.text = chapter.getTime()
+                let titleStringArray = chapter.getTitle().components(separatedBy: " - ")
+                if titleStringArray.count == 2 {
+                    labelChapter.text = titleStringArray[0]
+                    labelTitle.text = titleStringArray[1]
+                } else {
+                    labelChapter.text = "Chapter \(chapter.getNumber())"
+                    labelTitle.text = chapter.getTitle()
+                }
             }
         }
     }
