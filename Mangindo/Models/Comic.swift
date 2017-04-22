@@ -24,17 +24,15 @@ class Comic {
         self.lastModifiedDate = lastModifiedDate
     }
     
-    init(map: [String: Any]) {
+    convenience init(map: [String: Any]) {
         if let title = map["judul"] as! String?,
             let titleId = map["hidden_komik"] as! String?,
             let coverUrl = map["icon_komik"] as! String?,
             let newChapter = map["hiddenNewChapter"] as! String?,
             let lastModifiedDate = map["lastModified"] as! String? {
-            self.title = title
-            self.titleId = titleId
-            self.coverUrl = coverUrl
-            self.newChapter = newChapter
-            self.lastModifiedDate = lastModifiedDate
+            self.init(title: title, titleId: titleId, coverUrl: coverUrl, newChapter: newChapter, lastModifiedDate: lastModifiedDate)
+        } else {
+            self.init(title: "", titleId: "", coverUrl: "", newChapter: "", lastModifiedDate: "")
         }
     }
     

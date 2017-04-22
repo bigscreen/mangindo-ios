@@ -17,6 +17,8 @@
 		71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F6F1EAA7A560067A8D7 /* ApiURL.swift */; };
 		71617F741EAB98D90067A8D7 /* NewReleasedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F731EAB98D90067A8D7 /* NewReleasedResponse.swift */; };
 		71617F761EAB9AA80067A8D7 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F751EAB9AA80067A8D7 /* Comic.swift */; };
+		71617F781EABC4700067A8D7 /* ChaptersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F771EABC4700067A8D7 /* ChaptersLoader.swift */; };
+		71617F7A1EABC7150067A8D7 /* ChaptersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F791EABC7150067A8D7 /* ChaptersResponse.swift */; };
 		71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF91EA91764007F8865 /* MockedData.swift */; };
 		71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFB1EA92A61007F8865 /* AppColor.swift */; };
 		71B48B001EA9C5EA007F8865 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFF1EA9C5EA007F8865 /* Chapter.swift */; };
@@ -64,6 +66,8 @@
 		71617F6F1EAA7A560067A8D7 /* ApiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiURL.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Networking/ApiURL.swift; sourceTree = "<absolute>"; };
 		71617F731EAB98D90067A8D7 /* NewReleasedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewReleasedResponse.swift; path = Models/NewReleasedResponse.swift; sourceTree = "<group>"; };
 		71617F751EAB9AA80067A8D7 /* Comic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comic.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Models/Comic.swift; sourceTree = "<absolute>"; };
+		71617F771EABC4700067A8D7 /* ChaptersLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChaptersLoader.swift; path = Networking/ChaptersLoader.swift; sourceTree = "<group>"; };
+		71617F791EABC7150067A8D7 /* ChaptersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChaptersResponse.swift; path = Models/ChaptersResponse.swift; sourceTree = "<group>"; };
 		71B48AF91EA91764007F8865 /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockedData.swift; path = Common/MockedData.swift; sourceTree = "<group>"; };
 		71B48AFB1EA92A61007F8865 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColor.swift; path = Common/AppColor.swift; sourceTree = "<group>"; };
 		71B48AFF1EA9C5EA007F8865 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chapter.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Models/Chapter.swift; sourceTree = "<absolute>"; };
@@ -143,6 +147,7 @@
 				71617F751EAB9AA80067A8D7 /* Comic.swift */,
 				71B48AFF1EA9C5EA007F8865 /* Chapter.swift */,
 				71617F731EAB98D90067A8D7 /* NewReleasedResponse.swift */,
+				71617F791EABC7150067A8D7 /* ChaptersResponse.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		71617F6C1EAA796C0067A8D7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				71617F771EABC4700067A8D7 /* ChaptersLoader.swift */,
 				71617F6D1EAA79C10067A8D7 /* NewReleaseLoader.swift */,
 				71617F6F1EAA7A560067A8D7 /* ApiURL.swift */,
 			);
@@ -518,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71617F7A1EABC7150067A8D7 /* ChaptersResponse.swift in Sources */,
 				71104E8A1EAA22500007C591 /* NewReleasedViewCell.swift in Sources */,
 				71104E7F1EA9FD760007C591 /* ChapterViewCell.swift in Sources */,
 				71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */,
@@ -528,6 +535,7 @@
 				71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */,
 				71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */,
 				71B48B001EA9C5EA007F8865 /* Chapter.swift in Sources */,
+				71617F781EABC4700067A8D7 /* ChaptersLoader.swift in Sources */,
 				71617F761EAB9AA80067A8D7 /* Comic.swift in Sources */,
 				71B48B021EA9E8F4007F8865 /* ChaptersViewController.swift in Sources */,
 			);

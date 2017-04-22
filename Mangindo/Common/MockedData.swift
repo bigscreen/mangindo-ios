@@ -29,16 +29,16 @@ class MockedData {
     
     static func getChapters() -> [Chapter] {
         var chapters: [Chapter] = []
-        chapters.append(Chapter(number: "10", title: "End of Episode"))
-        chapters.append(Chapter(number: "9", title: "Episode I"))
-        chapters.append(Chapter(number: "8", title: "Episode H"))
-        chapters.append(Chapter(number: "7", title: "Episode G"))
-        chapters.append(Chapter(number: "6", title: "Episode F"))
-        chapters.append(Chapter(number: "5", title: "Episode E"))
-        chapters.append(Chapter(number: "4", title: "Episode D"))
-        chapters.append(Chapter(number: "3", title: "Episode C"))
-        chapters.append(Chapter(number: "2", title: "Episode B"))
-        chapters.append(Chapter(number: "1", title: "Beginning"))
+        chapters.append(Chapter(title: "Chapter 10 - End of Episode", number: 10, time: "Tue, 10-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 9 - Episode I", number: 10, time: "Mon, 9-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 8 - Episode H", number: 10, time: "Sun, 8-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 7 - Episode G", number: 10, time: "Sat, 7-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 6 - Episode F", number: 10, time: "Fri, 6-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 5 - Episode E", number: 10, time: "Thu, 5-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 4 - Episode D", number: 10, time: "Wed, 4-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 3 - Episode C", number: 10, time: "Tue, 3-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 2 - Episode B", number: 10, time: "Mon, 2-12-2017", comicTitleId: ""))
+        chapters.append(Chapter(title: "Chapter 1 - Beginning", number: 10, time: "Sun, 1-12-2017", comicTitleId: ""))
         return chapters
     }
     

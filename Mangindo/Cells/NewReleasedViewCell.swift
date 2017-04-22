@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewReleasedViewCell: UICollectionViewCell {
 
@@ -20,18 +21,12 @@ class NewReleasedViewCell: UICollectionViewCell {
         initCell()
     }
     
-    var mangaChapter: String? {
+    var newReleasedComic: Comic? {
         didSet {
-            if let chapter = mangaChapter {
-                labelChapter.text = "Chapter \(chapter)"
-            }
-        }
-    }
-    
-    var mangaTitle: String? {
-        didSet {
-            if let title = mangaTitle {
-                labelTitle.text = title
+            if let comic = newReleasedComic {
+                labelTitle.text = comic.getTitle()
+                labelChapter.text = "Chapter \(comic.getNewChapter())"
+                imageCover.sd_setImage(with: URL(string: comic.getCoverUrl()))
             }
         }
     }

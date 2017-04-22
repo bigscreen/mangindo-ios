@@ -8,22 +8,37 @@
 
 import UIKit
 
-class ChaptersViewController: UIViewController {
+class ChaptersViewController: UIViewController, ChaptersProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     
     let chapterCellID = "ChapterViewCell"
-    var chapters: [Chapter] = MockedData.getChapters()
-    var pageTitle: String = "Chapters"
+    var chapters: [Chapter] = []
+    
+    var loader: ChaptersLoader?
+    
+    var pageTitle = "Chapters"
+    var comicTitleId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = pageTitle
         setupTableView()
+        loader = ChaptersLoader(comicTitleId: comicTitleId, callback: self as ChaptersProtocol)
+        loader?.getChapters()
     }
 
     func setupTableView() {
         tableView.register(UINib(nibName: "ChapterViewCell", bundle: nil), forCellReuseIdentifier: "ChapterViewCell")
+    }
+    
+    func onSuccess(chapters: [Chapter]) {
+        self.chapters = chapters
+        tableView.reloadData()
+    }
+    
+    func onError(message: String) {
+        
     }
 
 }
@@ -43,9 +58,7 @@ extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
         cell.backgroundColor = UIColor.white
         cell.selectionStyle = .none
         
-        let chapter: Chapter = chapters[indexPath.row]
-        cell.chapterNumber = chapter.number
-        cell.chapterTitle = chapter.title
+        cell.comicChapter = chapters[indexPath.row]
         
         return cell
     }

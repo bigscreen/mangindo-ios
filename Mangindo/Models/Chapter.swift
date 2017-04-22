@@ -10,24 +10,55 @@ import Foundation
 
 class Chapter {
     
-    var number: String?
     var title: String?
+    var number: Int?
+    var time: String?
+    var comicTitleId: String?
     
-    init() {
-        self.number = ""
-        self.title = ""
-    }
-    
-    init(number: String, title: String) {
-        self.number = number
+    init(title: String, number: Int, time: String, comicTitleId: String) {
         self.title = title
+        self.number = number
+        self.time = time
+        self.comicTitleId = comicTitleId
     }
     
-    var description: String {
-        guard let number = number, let title = title else {
+    convenience init(map: [String: Any]) {
+        if let title = map["judul"] as! String?,
+            let number = map["hidden_chapter"] as! Int?,
+            let time = map["waktu"] as! String?,
+            let comicTitleId = map["hidden_komik"] as! String? {
+            self.init(title: title, number: number, time: time, comicTitleId: comicTitleId)
+        } else {
+            self.init(title: "", number: 0, time: "", comicTitleId: "")
+        }
+    }
+    
+    func getTitle() -> String {
+        guard let title = title else {
             return ""
         }
-        return "Chapter= {number=\(number), title=\(title)}"
+        return title
+    }
+    
+    func getNumber() -> Int {
+        guard let number = number else {
+            return 0
+        }
+        return number
+    }
+    
+    func getTime() -> String {
+        guard let time = time else {
+            return ""
+        }
+        return time
+    }
+    
+    func getComicTitleId() -> String {
+        guard let comicTitleId = comicTitleId else {
+            return ""
+        }
+        return comicTitleId
     }
     
 }

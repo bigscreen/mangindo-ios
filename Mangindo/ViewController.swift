@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController, NewReleaseProtocol {
     
@@ -15,8 +16,10 @@ class ViewController: UIViewController, NewReleaseProtocol {
     let newReleaseCellID = "NewReleasedViewCell"
     var newReleasedComics: [Comic] = []
     
-    var selectedTitle: String = ""
     var loader: NewReleaseLoader?
+    
+    var selectedTitle = ""
+    var selectedTitleId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,7 @@ class ViewController: UIViewController, NewReleaseProtocol {
         if segue.identifier == "showChapters" {
             let controller = segue.destination as! ChaptersViewController
             controller.pageTitle = selectedTitle
+            controller.comicTitleId = selectedTitleId
         }
     }
     
@@ -69,18 +73,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedViewCell
-        
-        let comic = newReleasedComics[indexPath.item]
-        cell.mangaTitle = comic.getTitle()
-        cell.mangaChapter = comic.getNewChapter()
-        cell.imageCover.backgroundColor = AppColor.greyDark
-        
+        cell.newReleasedComic = newReleasedComics[indexPath.item]
         return cell
     }
     
     // handle tap events
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedTitle = newReleasedComics[indexPath.item].getTitle()
+        let comic = newReleasedComics[indexPath.item]
+        selectedTitle = comic.getTitle()
+        selectedTitleId = comic.getTitleId()
         self.performSegue(withIdentifier: "showChapters", sender: self)
     }
     

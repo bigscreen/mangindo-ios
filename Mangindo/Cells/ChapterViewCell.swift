@@ -34,4 +34,13 @@ class ChapterViewCell: UITableViewCell {
         }
     }
     
+    var comicChapter: Chapter? {
+        didSet {
+            if let chapter = comicChapter {
+                labelChapter.text = chapter.getTitle()
+                labelTitle.text = chapter.getTime()
+            }
+        }
+    }
+    
 }
