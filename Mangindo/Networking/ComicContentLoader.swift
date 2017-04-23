@@ -12,9 +12,9 @@ class ComicContentLoader {
     
     private var comicTitleId: String?
     private var chapterNumber: Int?
-    private var callback: ComicContentsProtocol?
+    private var callback: ComicContentProtocol?
     
-    init(comicTitleId: String, chapterNumber: Int, callback: ComicContentsProtocol) {
+    init(comicTitleId: String, chapterNumber: Int, callback: ComicContentProtocol) {
         self.comicTitleId = comicTitleId
         self.chapterNumber = chapterNumber
         self.callback = callback
@@ -44,7 +44,7 @@ class ComicContentLoader {
     
 }
 
-protocol ComicContentsProtocol: class {
+protocol ComicContentProtocol: class {
     func startLoading()
     func stopLoading()
     func onSuccess(comicContents: [ComicContent])

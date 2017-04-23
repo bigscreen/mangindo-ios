@@ -116,11 +116,24 @@
                     <connections>
                         <outlet property="loadingIndicator" destination="X8i-QB-uBD" id="bfv-OH-DTV"/>
                         <outlet property="tableView" destination="Aid-cw-Hvc" id="ycF-N2-BrG"/>
+                        <segue destination="00g-KA-iHT" kind="show" identifier="showContent" id="AFn-In-TNN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNr-hU-2uo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-322" y="16"/>
+        </scene>
+        <!--Content-->
+        <scene sceneID="chT-7y-vrq">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="00g-KA-iHT" userLabel="Content" customClass="ComicContentViewController" customModule="Mangindo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Content" id="puj-ZC-62d" userLabel="Content">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="qNV-8q-ZDO"/>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YI3-Dz-L6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="16"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="paz-Kk-vNQ">

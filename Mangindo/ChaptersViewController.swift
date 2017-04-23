@@ -20,6 +20,7 @@ class ChaptersViewController: UIViewController, ChaptersProtocol {
     
     var pageTitle = "Chapters"
     var comicTitleId = ""
+    var selectedChapterNumber = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,15 @@ class ChaptersViewController: UIViewController, ChaptersProtocol {
         setupTableView()
         loader = ChaptersLoader(comicTitleId: comicTitleId, callback: self as ChaptersProtocol)
         loader?.getChapters()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showContent" {
+            let controller = segue.destination as! ComicContentViewController
+            controller.pageTitle = pageTitle
+            controller.comicTitleId = comicTitleId
+            controller.comicChapterNumber = selectedChapterNumber
+        }
     }
 
     func setupTableView() {
@@ -78,7 +88,8 @@ extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.item)!")
+        selectedChapterNumber = chapters[indexPath.row].getNumber()
+        self.performSegue(withIdentifier: "showContent", sender: self)
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
