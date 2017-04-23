@@ -13,7 +13,7 @@ class ChaptersResponse {
     var chapters: [Chapter]?
     
     init(map: [String: Any]) {
-        if let chaptersMap = map["komik"] as? [[String: Any]] {
+        if let chaptersMap = map["komik"] as! [[String: Any]]? {
             chapters = []
             chaptersMap.forEach { chapterMap in
                 chapters?.append(Chapter(map: chapterMap))

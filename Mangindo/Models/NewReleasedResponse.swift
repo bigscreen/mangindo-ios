@@ -13,7 +13,7 @@ class NewReleasedResponse {
     var comics: [Comic]?
     
     init(map: [String: Any]) {
-        if let comicsMap = map["komik"] as? [[String: Any]] {
+        if let comicsMap = map["komik"] as! [[String: Any]]? {
             comics = []
             comicsMap.forEach { comicMap in
                 comics?.append(Comic(map: comicMap))
