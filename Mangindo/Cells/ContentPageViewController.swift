@@ -20,7 +20,6 @@ class ContentPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = imageUrl {
-            imageComic.contentMode = UIViewContentMode.scaleAspectFit
             imageComic.sd_setImage(with: URL(string: url))
         }
         if let page = pageIndex {

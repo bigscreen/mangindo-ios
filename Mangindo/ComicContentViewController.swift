@@ -20,8 +20,8 @@ class ComicContentViewController: UIPageViewController, ComicContentProtocol, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataSource = self
         self.navigationItem.title = pageTitle
+        self.dataSource = self
         loader = ComicContentLoader(comicTitleId: comicTitleId, chapterNumber: comicChapterNumber, callback: self as ComicContentProtocol)
         loader?.getComicContents()
     }
@@ -40,7 +40,7 @@ class ComicContentViewController: UIPageViewController, ComicContentProtocol, UI
     
     func onSuccess(comicContents: [ComicContent]) {
         self.comicContents = comicContents
-        self.setViewControllers([getViewControllerAt(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.setViewControllers( [getViewControllerAt(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     }
     
     func onError(message: String) {
