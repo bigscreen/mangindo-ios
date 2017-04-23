@@ -36,6 +36,7 @@ class ComicContentLoader {
                 self.callback?.onError(message: "Could not fetch data.")
                 return
             }
+            print("asu, \(responseJSON)")
             let comicContentResponse = ComicContentResponse(map: responseJSON)
             self.callback?.stopLoading()
             self.callback?.onSuccess(comicContents: comicContentResponse.getComicContents())

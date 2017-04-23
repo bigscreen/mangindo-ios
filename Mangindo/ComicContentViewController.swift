@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ComicContentViewController: UIPageViewController, ComicContentProtocol {
+class ComicContentViewController: UIPageViewController, ComicContentProtocol, UIPageViewControllerDataSource {
     
     var comicContents: [ComicContent] = []
     
@@ -20,6 +20,7 @@ class ComicContentViewController: UIPageViewController, ComicContentProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dataSource = self
         self.navigationItem.title = pageTitle
         loader = ComicContentLoader(comicTitleId: comicTitleId, chapterNumber: comicChapterNumber, callback: self as ComicContentProtocol)
         loader?.getComicContents()
@@ -39,7 +40,7 @@ class ComicContentViewController: UIPageViewController, ComicContentProtocol {
     
     func onSuccess(comicContents: [ComicContent]) {
         self.comicContents = comicContents
-        print("ulala \(comicContents)")
+        self.setViewControllers([getViewControllerAt(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
     }
     
     func onError(message: String) {
@@ -50,6 +51,35 @@ class ComicContentViewController: UIPageViewController, ComicContentProtocol {
         }))
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    func getViewControllerAt(index: Int) -> ContentPageViewController {
+        let viewController = ContentPageViewController(nibName: "ContentPageViewController", bundle: nil)
+        viewController.imageUrl = comicContents[index].getImageUrl()
+        viewController.pageIndex = index
+        return viewController
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let pageContent = viewController as! ContentPageViewController
+        var index = pageContent.pageIndex!
+        if index == NSNotFound {
+            return nil;
+        }
+        index += 1;
+        if index == comicContents.count {
+            return nil;
+        }
+        return getViewControllerAt(index: index)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let pageContent = viewController as! ContentPageViewController
+        var index = pageContent.pageIndex!
+        if (index == 0) || (index == NSNotFound) {
+            return nil
+        }
+        index -= 1;
+        return getViewControllerAt(index: index)
+    }
 
 }

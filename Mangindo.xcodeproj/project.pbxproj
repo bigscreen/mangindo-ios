@@ -23,6 +23,8 @@
 		71617F7E1EAC7E050067A8D7 /* ComicContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F7D1EAC7E050067A8D7 /* ComicContentResponse.swift */; };
 		71617F801EAC7F6B0067A8D7 /* ComicContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F7F1EAC7F6B0067A8D7 /* ComicContentLoader.swift */; };
 		71617F821EAC84400067A8D7 /* ComicContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F811EAC84400067A8D7 /* ComicContentViewController.swift */; };
+		71617F851EAC89A90067A8D7 /* ContentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F831EAC89A90067A8D7 /* ContentPageViewController.swift */; };
+		71617F861EAC89A90067A8D7 /* ContentPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71617F841EAC89A90067A8D7 /* ContentPageViewController.xib */; };
 		71B48AFA1EA91764007F8865 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AF91EA91764007F8865 /* MockedData.swift */; };
 		71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFB1EA92A61007F8865 /* AppColor.swift */; };
 		71B48B001EA9C5EA007F8865 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48AFF1EA9C5EA007F8865 /* Chapter.swift */; };
@@ -76,6 +78,8 @@
 		71617F7D1EAC7E050067A8D7 /* ComicContentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComicContentResponse.swift; path = Models/ComicContentResponse.swift; sourceTree = "<group>"; };
 		71617F7F1EAC7F6B0067A8D7 /* ComicContentLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComicContentLoader.swift; path = Networking/ComicContentLoader.swift; sourceTree = "<group>"; };
 		71617F811EAC84400067A8D7 /* ComicContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicContentViewController.swift; sourceTree = "<group>"; };
+		71617F831EAC89A90067A8D7 /* ContentPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentPageViewController.swift; path = Cells/ContentPageViewController.swift; sourceTree = "<group>"; };
+		71617F841EAC89A90067A8D7 /* ContentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentPageViewController.xib; path = Cells/ContentPageViewController.xib; sourceTree = "<group>"; };
 		71B48AF91EA91764007F8865 /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockedData.swift; path = Common/MockedData.swift; sourceTree = "<group>"; };
 		71B48AFB1EA92A61007F8865 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColor.swift; path = Common/AppColor.swift; sourceTree = "<group>"; };
 		71B48AFF1EA9C5EA007F8865 /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Chapter.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Models/Chapter.swift; sourceTree = "<absolute>"; };
@@ -145,6 +149,8 @@
 				71104E891EAA22500007C591 /* NewReleasedViewCell.xib */,
 				71104E7D1EA9FD760007C591 /* ChapterViewCell.swift */,
 				71104E7E1EA9FD760007C591 /* ChapterViewCell.xib */,
+				71617F831EAC89A90067A8D7 /* ContentPageViewController.swift */,
+				71617F841EAC89A90067A8D7 /* ContentPageViewController.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 				71C50DE21E56EA30004010AF /* LaunchScreen.storyboard in Resources */,
 				71C50DDF1E56EA30004010AF /* Assets.xcassets in Resources */,
 				71104E801EA9FD760007C591 /* ChapterViewCell.xib in Resources */,
+				71617F861EAC89A90067A8D7 /* ContentPageViewController.xib in Resources */,
 				71104E8B1EAA22500007C591 /* NewReleasedViewCell.xib in Resources */,
 				71C50DDD1E56EA30004010AF /* Main.storyboard in Resources */,
 			);
@@ -547,6 +554,7 @@
 				71617F821EAC84400067A8D7 /* ComicContentViewController.swift in Sources */,
 				71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */,
 				71617F7C1EAC7CE20067A8D7 /* ComicContent.swift in Sources */,
+				71617F851EAC89A90067A8D7 /* ContentPageViewController.swift in Sources */,
 				71617F7E1EAC7E050067A8D7 /* ComicContentResponse.swift in Sources */,
 				71617F801EAC7F6B0067A8D7 /* ComicContentLoader.swift in Sources */,
 				71B48AFC1EA92A61007F8865 /* AppColor.swift in Sources */,

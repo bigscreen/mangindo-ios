@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-cw-Hvc" userLabel="Chapters Table View">
-                                <rect key="frame" x="-1.5" y="64" width="378" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <sections/>
@@ -102,8 +102,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Aid-cw-Hvc" firstAttribute="leading" secondItem="e1v-tg-A9m" secondAttribute="leadingMargin" constant="-17.5" id="CMQ-fl-qNw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Aid-cw-Hvc" secondAttribute="trailing" constant="-17.5" id="DNo-ER-H1S"/>
+                            <constraint firstItem="Aid-cw-Hvc" firstAttribute="leading" secondItem="e1v-tg-A9m" secondAttribute="leadingMargin" constant="-16" id="CMQ-fl-qNw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aid-cw-Hvc" secondAttribute="trailing" constant="-16" id="DNo-ER-H1S"/>
                             <constraint firstItem="X8i-QB-uBD" firstAttribute="centerX" secondItem="e1v-tg-A9m" secondAttribute="centerX" id="Zh0-uf-Fcg"/>
                             <constraint firstItem="Aid-cw-Hvc" firstAttribute="top" secondItem="AZN-bk-zw9" secondAttribute="bottom" id="hWi-1z-Z9u"/>
                             <constraint firstItem="4YJ-3Y-FbF" firstAttribute="top" secondItem="Aid-cw-Hvc" secondAttribute="bottom" id="rqd-MU-ame"/>
