@@ -126,7 +126,7 @@
         <!--Content-->
         <scene sceneID="chT-7y-vrq">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="00g-KA-iHT" userLabel="Content" customClass="ComicContentViewController" customModule="Mangindo" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="00g-KA-iHT" userLabel="Content" customClass="ComicContentViewController" customModule="Mangindo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Content" id="puj-ZC-62d" userLabel="Content">
                         <barButtonItem key="backBarButtonItem" title="Back" id="qNV-8q-ZDO"/>
                     </navigationItem>

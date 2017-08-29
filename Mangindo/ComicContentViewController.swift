@@ -52,6 +52,10 @@ class ComicContentViewController: UIPageViewController, ComicContentProtocol, UI
         self.present(alert, animated: true, completion: nil)
     }
     
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return comicContents.count
+    }
+    
     func getViewControllerAt(index: Int) -> ContentPageViewController {
         let viewController = ContentPageViewController(nibName: "ContentPageViewController", bundle: nil)
         viewController.imageUrl = comicContents[index].getImageUrl()
