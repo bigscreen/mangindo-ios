@@ -24,7 +24,9 @@ class NewReleasedViewController: UIViewController, NewReleaseProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.statusBarStyle = .lightContent
+        let emptyImage = UIImage()
+        self.navigationController?.navigationBar.shadowImage = emptyImage
+        self.navigationController?.navigationBar.setBackgroundImage(emptyImage, for: UIBarMetrics.default)
         setupCollectionView()
         loader = NewReleaseLoader(callback: self as NewReleaseProtocol)
         loader?.getNewRelease()
