@@ -10,7 +10,6 @@
 		249DBEBDA7A537D354BE0229 /* Pods_MangindoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB3671DCF518560E95A0BF2 /* Pods_MangindoUITests.framework */; };
 		2B74CDFE77F9B0DD1997751E /* Pods_Mangindo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C52C064566C6C7970852DB /* Pods_Mangindo.framework */; };
 		71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F6F1EAA7A560067A8D7 /* ApiURL.swift */; };
-		71617F821EAC84400067A8D7 /* ComicContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F811EAC84400067A8D7 /* ComicContentViewController.swift */; };
 		71B48B021EA9E8F4007F8865 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */; };
 		71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DD71E56EA30004010AF /* AppDelegate.swift */; };
 		71C50DDA1E56EA30004010AF /* NewReleasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DD91E56EA30004010AF /* NewReleasedViewController.swift */; };
@@ -26,14 +25,13 @@
 		71FDB7C21F556AEE008B8C31 /* NewReleasedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7BE1F556AEE008B8C31 /* NewReleasedResponse.swift */; };
 		71FDB7C91F556B06008B8C31 /* ChapterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7C31F556B06008B8C31 /* ChapterViewCell.swift */; };
 		71FDB7CA1F556B06008B8C31 /* ChapterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FDB7C41F556B06008B8C31 /* ChapterViewCell.xib */; };
-		71FDB7CB1F556B06008B8C31 /* ContentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7C51F556B06008B8C31 /* ContentPageViewController.swift */; };
-		71FDB7CC1F556B06008B8C31 /* ContentPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FDB7C61F556B06008B8C31 /* ContentPageViewController.xib */; };
 		71FDB7CD1F556B06008B8C31 /* NewReleasedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7C71F556B06008B8C31 /* NewReleasedViewCell.swift */; };
 		71FDB7CE1F556B06008B8C31 /* NewReleasedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FDB7C81F556B06008B8C31 /* NewReleasedViewCell.xib */; };
 		71FDB7D21F556B1F008B8C31 /* ChaptersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7CF1F556B1F008B8C31 /* ChaptersLoader.swift */; };
 		71FDB7D31F556B1F008B8C31 /* ComicContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D01F556B1F008B8C31 /* ComicContentLoader.swift */; };
 		71FDB7D41F556B1F008B8C31 /* NewReleaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D11F556B1F008B8C31 /* NewReleaseLoader.swift */; };
 		71FDB7D61F56741F008B8C31 /* ComicPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D51F56741F008B8C31 /* ComicPageView.swift */; };
+		71FDB7D81F567B32008B8C31 /* ComicPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D71F567B32008B8C31 /* ComicPagesViewController.swift */; };
 		C6403E807AAEB10ED6E9D8FD /* Pods_MangindoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE01AC3BBB4DD7FCB27393 /* Pods_MangindoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +61,6 @@
 		64DE01AC3BBB4DD7FCB27393 /* Pods_MangindoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangindoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB3671DCF518560E95A0BF2 /* Pods_MangindoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MangindoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71617F6F1EAA7A560067A8D7 /* ApiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiURL.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Networking/ApiURL.swift; sourceTree = "<absolute>"; };
-		71617F811EAC84400067A8D7 /* ComicContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicContentViewController.swift; sourceTree = "<group>"; };
 		71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
 		71C50DD41E56EA30004010AF /* Mangindo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mangindo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C50DD71E56EA30004010AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,14 +82,13 @@
 		71FDB7BE1F556AEE008B8C31 /* NewReleasedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasedResponse.swift; sourceTree = "<group>"; };
 		71FDB7C31F556B06008B8C31 /* ChapterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterViewCell.swift; sourceTree = "<group>"; };
 		71FDB7C41F556B06008B8C31 /* ChapterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterViewCell.xib; sourceTree = "<group>"; };
-		71FDB7C51F556B06008B8C31 /* ContentPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPageViewController.swift; sourceTree = "<group>"; };
-		71FDB7C61F556B06008B8C31 /* ContentPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentPageViewController.xib; sourceTree = "<group>"; };
 		71FDB7C71F556B06008B8C31 /* NewReleasedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasedViewCell.swift; sourceTree = "<group>"; };
 		71FDB7C81F556B06008B8C31 /* NewReleasedViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewReleasedViewCell.xib; sourceTree = "<group>"; };
 		71FDB7CF1F556B1F008B8C31 /* ChaptersLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersLoader.swift; sourceTree = "<group>"; };
 		71FDB7D01F556B1F008B8C31 /* ComicContentLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicContentLoader.swift; sourceTree = "<group>"; };
 		71FDB7D11F556B1F008B8C31 /* NewReleaseLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleaseLoader.swift; sourceTree = "<group>"; };
 		71FDB7D51F56741F008B8C31 /* ComicPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicPageView.swift; sourceTree = "<group>"; };
+		71FDB7D71F567B32008B8C31 /* ComicPagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicPagesViewController.swift; sourceTree = "<group>"; };
 		A56EF9AD9790E38887C4A4DD /* Pods-Mangindo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1223F68ED7F60D2DA75D5D /* Pods-Mangindo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,8 +141,6 @@
 				71FDB7C81F556B06008B8C31 /* NewReleasedViewCell.xib */,
 				71FDB7C31F556B06008B8C31 /* ChapterViewCell.swift */,
 				71FDB7C41F556B06008B8C31 /* ChapterViewCell.xib */,
-				71FDB7C51F556B06008B8C31 /* ContentPageViewController.swift */,
-				71FDB7C61F556B06008B8C31 /* ContentPageViewController.xib */,
 				71FDB7D51F56741F008B8C31 /* ComicPageView.swift */,
 			);
 			path = Cells;
@@ -214,7 +208,7 @@
 				71C50DD71E56EA30004010AF /* AppDelegate.swift */,
 				71C50DD91E56EA30004010AF /* NewReleasedViewController.swift */,
 				71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */,
-				71617F811EAC84400067A8D7 /* ComicContentViewController.swift */,
+				71FDB7D71F567B32008B8C31 /* ComicPagesViewController.swift */,
 				71C50DDB1E56EA30004010AF /* Main.storyboard */,
 				71C50DE01E56EA30004010AF /* LaunchScreen.storyboard */,
 				71C50DE31E56EA30004010AF /* Info.plist */,
@@ -371,7 +365,6 @@
 			files = (
 				71C50DE21E56EA30004010AF /* LaunchScreen.storyboard in Resources */,
 				71C50DDF1E56EA30004010AF /* Assets.xcassets in Resources */,
-				71FDB7CC1F556B06008B8C31 /* ContentPageViewController.xib in Resources */,
 				71C50DDD1E56EA30004010AF /* Main.storyboard in Resources */,
 				71FDB7CE1F556B06008B8C31 /* NewReleasedViewCell.xib in Resources */,
 				71FDB7CA1F556B06008B8C31 /* ChapterViewCell.xib in Resources */,
@@ -547,11 +540,10 @@
 				71FDB7D41F556B1F008B8C31 /* NewReleaseLoader.swift in Sources */,
 				71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */,
 				71FDB7C91F556B06008B8C31 /* ChapterViewCell.swift in Sources */,
-				71FDB7CB1F556B06008B8C31 /* ContentPageViewController.swift in Sources */,
-				71617F821EAC84400067A8D7 /* ComicContentViewController.swift in Sources */,
 				71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */,
 				71FDB7CD1F556B06008B8C31 /* NewReleasedViewCell.swift in Sources */,
 				71FDB7C11F556AEE008B8C31 /* ComicContentResponse.swift in Sources */,
+				71FDB7D81F567B32008B8C31 /* ComicPagesViewController.swift in Sources */,
 				71FDB7D21F556B1F008B8C31 /* ChaptersLoader.swift in Sources */,
 				71B48B021EA9E8F4007F8865 /* ChaptersViewController.swift in Sources */,
 			);

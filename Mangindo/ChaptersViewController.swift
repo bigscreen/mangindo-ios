@@ -31,9 +31,9 @@ class ChaptersViewController: UIViewController, ChaptersProtocol {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showContent" {
-            let controller = segue.destination as! ComicContentViewController
-            controller.pageTitle = pageTitle
+        if segue.identifier == "showComicPages" {
+            let controller = segue.destination as! ComicPagesViewController
+            controller.pageTitle = "\(pageTitle) \(selectedChapterNumber)"
             controller.comicTitleId = comicTitleId
             controller.comicChapterNumber = selectedChapterNumber
         }
@@ -89,7 +89,7 @@ extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedChapterNumber = chapters[indexPath.row].number
-        self.performSegue(withIdentifier: "showContent", sender: self)
+        self.performSegue(withIdentifier: "showComicPages", sender: self)
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {

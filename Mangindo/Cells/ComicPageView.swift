@@ -40,8 +40,12 @@ class ComicPageView: UIView {
         comicImageView.contentMode = .scaleAspectFit
         pageNumberLabel = UILabel()
         pageNumberLabel.translatesAutoresizingMaskIntoConstraints = false
-        pageNumberLabel.textColor = UIColor(red: 47, green: 47, blue: 47, alpha: 0.8)
-        pageNumberLabel.font = pageNumberLabel.font.withSize(14)
+        pageNumberLabel.textColor = UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 0.8)
+        pageNumberLabel.font = pageNumberLabel.font.withSize(11)
+        pageNumberLabel.textAlignment = .center
+        pageNumberLabel.backgroundColor = UIColor.white
+        pageNumberLabel.layer.cornerRadius = 9
+        pageNumberLabel.layer.masksToBounds = true
         setupConstraints()
     }
     
@@ -54,8 +58,8 @@ class ComicPageView: UIView {
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[comicImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: comicImageViewDict))
         
         self.addSubview(pageNumberLabel)
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[pageLabel]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[pageLabel]-20-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[pageLabel(18)]-12-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[pageLabel(18)]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
     }
     
     private func setupContents() {
