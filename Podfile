@@ -8,6 +8,7 @@ target 'Mangindo' do
   pod 'ObjectMapper', '~> 2.2'
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'SDWebImage', '~>3.8'
+  pod 'iCarousel', '1.8.2'
 
   # Pods for Mangindo
 

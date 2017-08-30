@@ -33,6 +33,7 @@
 		71FDB7D21F556B1F008B8C31 /* ChaptersLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7CF1F556B1F008B8C31 /* ChaptersLoader.swift */; };
 		71FDB7D31F556B1F008B8C31 /* ComicContentLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D01F556B1F008B8C31 /* ComicContentLoader.swift */; };
 		71FDB7D41F556B1F008B8C31 /* NewReleaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D11F556B1F008B8C31 /* NewReleaseLoader.swift */; };
+		71FDB7D61F56741F008B8C31 /* ComicPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D51F56741F008B8C31 /* ComicPageView.swift */; };
 		C6403E807AAEB10ED6E9D8FD /* Pods_MangindoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE01AC3BBB4DD7FCB27393 /* Pods_MangindoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		71FDB7CF1F556B1F008B8C31 /* ChaptersLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersLoader.swift; sourceTree = "<group>"; };
 		71FDB7D01F556B1F008B8C31 /* ComicContentLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicContentLoader.swift; sourceTree = "<group>"; };
 		71FDB7D11F556B1F008B8C31 /* NewReleaseLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleaseLoader.swift; sourceTree = "<group>"; };
+		71FDB7D51F56741F008B8C31 /* ComicPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicPageView.swift; sourceTree = "<group>"; };
 		A56EF9AD9790E38887C4A4DD /* Pods-Mangindo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1223F68ED7F60D2DA75D5D /* Pods-Mangindo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,12 +141,13 @@
 		71104E811EA9FD7B0007C591 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				71FDB7C71F556B06008B8C31 /* NewReleasedViewCell.swift */,
+				71FDB7C81F556B06008B8C31 /* NewReleasedViewCell.xib */,
 				71FDB7C31F556B06008B8C31 /* ChapterViewCell.swift */,
 				71FDB7C41F556B06008B8C31 /* ChapterViewCell.xib */,
 				71FDB7C51F556B06008B8C31 /* ContentPageViewController.swift */,
 				71FDB7C61F556B06008B8C31 /* ContentPageViewController.xib */,
-				71FDB7C71F556B06008B8C31 /* NewReleasedViewCell.swift */,
-				71FDB7C81F556B06008B8C31 /* NewReleasedViewCell.xib */,
+				71FDB7D51F56741F008B8C31 /* ComicPageView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				71FDB7D31F556B1F008B8C31 /* ComicContentLoader.swift in Sources */,
 				71FDB7BA1F556ADB008B8C31 /* MockedData.swift in Sources */,
 				71FDB7BF1F556AEE008B8C31 /* ChaptersResponse.swift in Sources */,
+				71FDB7D61F56741F008B8C31 /* ComicPageView.swift in Sources */,
 				71C50DDA1E56EA30004010AF /* NewReleasedViewController.swift in Sources */,
 				71FDB7D41F556B1F008B8C31 /* NewReleaseLoader.swift in Sources */,
 				71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */,
