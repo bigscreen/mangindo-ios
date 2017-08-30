@@ -7,6 +7,8 @@
 //
 
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 
 class NewReleaseLoader {
     
@@ -18,22 +20,13 @@ class NewReleaseLoader {
     
     func getNewRelease() {
         callback?.startLoading()
-        Alamofire.request(ApiURL.newReleased).responseJSON { response in
-            guard response.result.isSuccess else {
-                print("Error, \(response.result.error)")
-                self.callback?.stopLoading()
-                self.callback?.onError(message: "Could not fetch data.")
-                return
-            }
-            guard let responseJSON = response.result.value as? [String: Any] else {
-                print("Error, Could not parse data")
-                self.callback?.stopLoading()
-                self.callback?.onError(message: "Could not fetch data.")
-                return
-            }
-            let newReleased = NewReleasedResponse(map: responseJSON)
+        Alamofire.request(ApiURL.newReleased).responseObject { (response: DataResponse<NewReleasedResponse>) in
             self.callback?.stopLoading()
-            self.callback?.onSuccess(newReleasedComics: newReleased.getComics())
+            if response.result.isSuccess, let response = response.result.value {
+                self.callback?.onSuccess(newReleasedComics: response.comics)
+            } else {
+                self.callback?.onError(message: response.error?.localizedDescription ?? "Could not fetch data.")
+            }
         }
     }
     

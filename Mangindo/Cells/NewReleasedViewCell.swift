@@ -24,9 +24,9 @@ class NewReleasedViewCell: UICollectionViewCell {
     var newReleasedComic: Comic? {
         didSet {
             if let comic = newReleasedComic {
-                labelTitle.text = comic.getTitle()
-                labelChapter.text = "Chapter \(comic.getNewChapter())"
-                imageCover.sd_setImage(with: URL(string: comic.getCoverUrl()))
+                labelTitle.text = comic.title
+                labelChapter.text = "Chapter \(comic.newChapter)"
+                imageCover.sd_setImage(with: URL(string: comic.coverUrl))
             }
         }
     }

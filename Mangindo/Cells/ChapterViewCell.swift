@@ -20,13 +20,13 @@ class ChapterViewCell: UITableViewCell {
     var comicChapter: Chapter? {
         didSet {
             if let chapter = comicChapter {
-                let titleStringArray = chapter.getTitle().components(separatedBy: " - ")
+                let titleStringArray = chapter.title.components(separatedBy: " - ")
                 if titleStringArray.count == 2 {
                     labelChapter.text = titleStringArray[0]
                     labelTitle.text = titleStringArray[1]
                 } else {
-                    labelChapter.text = "Chapter \(chapter.getNumber())"
-                    labelTitle.text = chapter.getTitle()
+                    labelChapter.text = "Chapter \(chapter.number)"
+                    labelTitle.text = chapter.title
                 }
             }
         }

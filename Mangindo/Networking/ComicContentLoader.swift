@@ -7,6 +7,8 @@
 //
 
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 
 class ComicContentLoader {
     
@@ -23,23 +25,13 @@ class ComicContentLoader {
     func getComicContents() {
         callback?.startLoading()
         let url = "\(ApiURL.comicContent)?manga=\(comicTitleId!)&chapter=\(chapterNumber!)"
-        Alamofire.request(url).responseJSON { response in
-            guard response.result.isSuccess else {
-                print("Error, \(response.result.error)")
-                self.callback?.stopLoading()
-                self.callback?.onError(message: "Could not fetch data.")
-                return
-            }
-            guard let responseJSON = response.result.value as? [String: Any] else {
-                print("Error, Could not parse data")
-                self.callback?.stopLoading()
-                self.callback?.onError(message: "Could not fetch data.")
-                return
-            }
-            print("asu, \(responseJSON)")
-            let comicContentResponse = ComicContentResponse(map: responseJSON)
+        Alamofire.request(url).responseObject { (response: DataResponse<ComicContentResponse>) in
             self.callback?.stopLoading()
-            self.callback?.onSuccess(comicContents: comicContentResponse.getComicContents())
+            if response.result.isSuccess, let response = response.result.value {
+                self.callback?.onSuccess(comicContents: response.comicContents)
+            } else {
+                self.callback?.onError(message: response.error?.localizedDescription ?? "Could not fetch data.")
+            }
         }
     }
     

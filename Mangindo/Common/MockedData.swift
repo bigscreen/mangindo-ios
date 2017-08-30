@@ -9,7 +9,8 @@
 import Foundation
 
 class MockedData {
-    
+
+    /*
     static func getNewReleasedComics() -> [Comic] {
         var newReleasedComics: [Comic] = []
         newReleasedComics.append(Comic(title: "Bleach", titleId: "bleach", coverUrl: "", newChapter: "65", lastModifiedDate: ""))
@@ -41,5 +42,6 @@ class MockedData {
         chapters.append(Chapter(title: "Chapter 1 - Beginning", number: 10, time: "Sun, 1-12-2017", comicTitleId: ""))
         return chapters
     }
+     */
     
 }

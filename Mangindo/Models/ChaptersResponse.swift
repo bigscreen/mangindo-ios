@@ -6,26 +6,36 @@
 //  Copyright © 2017 Gallant Pratama. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-class ChaptersResponse {
+class ChaptersResponse: Mappable {
     
-    var chapters: [Chapter]?
+    var chapters: [Chapter] = []
     
-    init(map: [String: Any]) {
-        if let chaptersMap = map["komik"] as! [[String: Any]]? {
-            chapters = []
-            chaptersMap.forEach { chapterMap in
-                chapters?.append(Chapter(map: chapterMap))
-            }
-        }
+    required init?(map: Map) {
     }
     
-    func getChapters() -> [Chapter] {
-        guard let chapters = chapters else {
-            return []
-        }
-        return chapters
+    func mapping(map: Map) {
+        chapters <- map["komik"]
+    }
+    
+}
+
+class Chapter: Mappable {
+    
+    var title: String = ""
+    var number: Int = 0
+    var time: String = ""
+    var comicTitleId: String = ""
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        title <- map["judul"]
+        number <- map["hidden_chapter"]
+        time <- map["waktu"]
+        comicTitleId <- map["hidden_komik"]
     }
     
 }

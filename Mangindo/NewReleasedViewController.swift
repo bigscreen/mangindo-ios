@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController, NewReleaseProtocol {
+class NewReleasedViewController: UIViewController, NewReleaseProtocol {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -69,7 +69,7 @@ class ViewController: UIViewController, NewReleaseProtocol {
     }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension NewReleasedViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     // set width of collection view cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -94,8 +94,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     // handle tap events
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let comic = newReleasedComics[indexPath.item]
-        selectedTitle = comic.getTitle()
-        selectedTitleId = comic.getTitleId()
+        selectedTitle = comic.title
+        selectedTitleId = comic.titleId
         self.performSegue(withIdentifier: "showChapters", sender: self)
     }
     

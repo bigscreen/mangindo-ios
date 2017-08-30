@@ -6,26 +6,38 @@
 //  Copyright © 2017 Gallant Pratama. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-class NewReleasedResponse {
+class NewReleasedResponse: Mappable {
     
-    var comics: [Comic]?
+    var comics: [Comic] = []
     
-    init(map: [String: Any]) {
-        if let comicsMap = map["komik"] as! [[String: Any]]? {
-            comics = []
-            comicsMap.forEach { comicMap in
-                comics?.append(Comic(map: comicMap))
-            }
-        }
+    required init?(map: Map) {
     }
     
-    func getComics() -> [Comic] {
-        guard let comics = comics else {
-            return []
-        }
-        return comics
+    func mapping(map: Map) {
+        comics <- map["komik"]
+    }
+    
+}
+
+class Comic: Mappable {
+    
+    var title: String = ""
+    var titleId: String = ""
+    var coverUrl: String = ""
+    var newChapter: String = ""
+    var lastModifiedDate: String = ""
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        title <- map["judul"]
+        titleId <- map["hidden_komik"]
+        coverUrl <- map["icon_komik"]
+        newChapter <- map["hiddenNewChapter"]
+        lastModifiedDate <- map["lastModified"]
     }
     
 }

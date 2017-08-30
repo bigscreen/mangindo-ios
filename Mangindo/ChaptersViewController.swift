@@ -88,7 +88,7 @@ extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedChapterNumber = chapters[indexPath.row].getNumber()
+        selectedChapterNumber = chapters[indexPath.row].number
         self.performSegue(withIdentifier: "showContent", sender: self)
     }
     

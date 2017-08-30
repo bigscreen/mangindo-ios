@@ -58,7 +58,7 @@ class ComicContentViewController: UIPageViewController, ComicContentProtocol, UI
     
     func getViewControllerAt(index: Int) -> ContentPageViewController {
         let viewController = ContentPageViewController(nibName: "ContentPageViewController", bundle: nil)
-        viewController.imageUrl = comicContents[index].getImageUrl()
+        viewController.imageUrl = comicContents[index].imageUrl
         viewController.pageIndex = index
         return viewController
     }
