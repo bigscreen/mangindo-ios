@@ -32,6 +32,7 @@
 		71FDB7D41F556B1F008B8C31 /* NewReleaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D11F556B1F008B8C31 /* NewReleaseLoader.swift */; };
 		71FDB7D61F56741F008B8C31 /* ComicPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D51F56741F008B8C31 /* ComicPageView.swift */; };
 		71FDB7D81F567B32008B8C31 /* ComicPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7D71F567B32008B8C31 /* ComicPagesViewController.swift */; };
+		71FDB7DB1F56A8F7008B8C31 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7DA1F56A8F7008B8C31 /* UIColor.swift */; };
 		C6403E807AAEB10ED6E9D8FD /* Pods_MangindoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE01AC3BBB4DD7FCB27393 /* Pods_MangindoTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		71FDB7D11F556B1F008B8C31 /* NewReleaseLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleaseLoader.swift; sourceTree = "<group>"; };
 		71FDB7D51F56741F008B8C31 /* ComicPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicPageView.swift; sourceTree = "<group>"; };
 		71FDB7D71F567B32008B8C31 /* ComicPagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicPagesViewController.swift; sourceTree = "<group>"; };
+		71FDB7DA1F56A8F7008B8C31 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A56EF9AD9790E38887C4A4DD /* Pods-Mangindo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1223F68ED7F60D2DA75D5D /* Pods-Mangindo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangindo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mangindo/Pods-Mangindo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +207,7 @@
 				71104E861EAA1E950007C591 /* Models */,
 				71104E811EA9FD7B0007C591 /* Cells */,
 				71617F6C1EAA796C0067A8D7 /* Networking */,
+				71FDB7D91F56A89F008B8C31 /* Extension */,
 				71C50DD71E56EA30004010AF /* AppDelegate.swift */,
 				71C50DD91E56EA30004010AF /* NewReleasedViewController.swift */,
 				71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */,
@@ -233,6 +236,14 @@
 				71C50DF91E56EA30004010AF /* Info.plist */,
 			);
 			path = MangindoUITests;
+			sourceTree = "<group>";
+		};
+		71FDB7D91F56A89F008B8C31 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				71FDB7DA1F56A8F7008B8C31 /* UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D99046A6EB71CAF96A8D187A /* Frameworks */ = {
@@ -536,6 +547,7 @@
 				71FDB7BA1F556ADB008B8C31 /* MockedData.swift in Sources */,
 				71FDB7BF1F556AEE008B8C31 /* ChaptersResponse.swift in Sources */,
 				71FDB7D61F56741F008B8C31 /* ComicPageView.swift in Sources */,
+				71FDB7DB1F56A8F7008B8C31 /* UIColor.swift in Sources */,
 				71C50DDA1E56EA30004010AF /* NewReleasedViewController.swift in Sources */,
 				71FDB7D41F556B1F008B8C31 /* NewReleaseLoader.swift in Sources */,
 				71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */,
@@ -640,12 +652,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -684,10 +697,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

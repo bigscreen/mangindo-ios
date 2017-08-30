@@ -40,7 +40,7 @@ class ComicPageView: UIView {
         comicImageView.contentMode = .scaleAspectFit
         pageNumberLabel = UILabel()
         pageNumberLabel.translatesAutoresizingMaskIntoConstraints = false
-        pageNumberLabel.textColor = UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 0.8)
+        pageNumberLabel.textColor = UIColor(red: 47, green: 47, blue: 47)
         pageNumberLabel.font = pageNumberLabel.font.withSize(11)
         pageNumberLabel.textAlignment = .center
         pageNumberLabel.backgroundColor = UIColor.white

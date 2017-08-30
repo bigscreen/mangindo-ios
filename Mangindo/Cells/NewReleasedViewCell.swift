@@ -32,15 +32,15 @@ class NewReleasedViewCell: UICollectionViewCell {
     }
     
     func initCell() {
-        viewCard.layer.cornerRadius = 3
-        viewCard.layer.borderWidth = 0.4
-        viewCard.layer.borderColor = AppColor.greyDark.cgColor
-        viewCard.layer.shadowOffset = CGSize(width: 0, height: 1.5)
-        viewCard.layer.shadowColor = AppColor.greyDark.cgColor
-        viewCard.layer.shadowRadius = 1.5
-        viewCard.layer.shadowOpacity = 0.5
-        viewCard.layer.masksToBounds = false
-        viewCard.clipsToBounds = false
+        self.layer.cornerRadius = 3
+        self.layer.borderWidth = 0.4
+        self.layer.borderColor = AppColor.greyDark.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+        self.layer.shadowColor = AppColor.greyDark.cgColor
+        self.layer.shadowRadius = 3
+        self.layer.shadowOpacity = 0.5
+        self.layer.masksToBounds = false
+        self.clipsToBounds = false
     }
     
     func setHighlighted() {
