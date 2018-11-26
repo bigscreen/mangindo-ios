@@ -21,9 +21,9 @@ class NewReleasedViewCell: UICollectionViewCell {
         initCell()
     }
     
-    var newReleasedComic: Comic? {
+    var newReleasedManga: Manga? {
         didSet {
-            if let comic = newReleasedComic {
+            if let comic = newReleasedManga {
                 labelTitle.text = comic.title
                 labelChapter.text = "Chapter \(comic.newChapter)"
                 imageCover.sd_setImage(with: URL(string: comic.coverUrl))

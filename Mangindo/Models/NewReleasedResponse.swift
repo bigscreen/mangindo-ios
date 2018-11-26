@@ -10,18 +10,18 @@ import ObjectMapper
 
 class NewReleasedResponse: Mappable {
     
-    var comics: [Comic] = []
+    var mangas: [Manga] = []
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        comics <- map["komik"]
+        mangas <- map["komik"]
     }
     
 }
 
-class Comic: Mappable {
+class Manga: Mappable {
     
     var title: String = ""
     var titleId: String = ""

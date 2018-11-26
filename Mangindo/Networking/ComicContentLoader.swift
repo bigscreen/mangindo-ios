@@ -24,11 +24,11 @@ class ComicContentLoader {
     
     func getComicContents() {
         callback?.startLoading()
-        let url = "\(ApiURL.comicContent)?manga=\(comicTitleId!)&chapter=\(chapterNumber!)"
-        Alamofire.request(url).responseObject { (response: DataResponse<ComicContentResponse>) in
+        let url = "\(ApiURL.mangaContent)?manga=\(comicTitleId!)&chapter=\(chapterNumber!)"
+        Alamofire.request(url).responseObject { (response: DataResponse<MangaContentResponse>) in
             self.callback?.stopLoading()
             if response.result.isSuccess, let response = response.result.value {
-                self.callback?.onSuccess(comicContents: response.comicContents)
+                self.callback?.onSuccess(comicContents: response.mangaContents)
             } else {
                 self.callback?.onError(message: response.error?.localizedDescription ?? "Could not fetch data.")
             }
@@ -40,6 +40,6 @@ class ComicContentLoader {
 protocol ComicContentProtocol: class {
     func startLoading()
     func stopLoading()
-    func onSuccess(comicContents: [ComicContent])
+    func onSuccess(comicContents: [MangaContent])
     func onError(message: String)
 }

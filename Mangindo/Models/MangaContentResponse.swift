@@ -8,20 +8,20 @@
 
 import ObjectMapper
 
-class ComicContentResponse: Mappable {
+class MangaContentResponse: Mappable {
     
-    var comicContents: [ComicContent] = []
+    var mangaContents: [MangaContent] = []
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        comicContents <- map["chapter"]
+        mangaContents <- map["chapter"]
     }
     
 }
 
-class ComicContent: Mappable {
+class MangaContent: Mappable {
     
     var imageUrl: String = ""
     

@@ -14,7 +14,7 @@ class ComicPagesViewController: UIViewController {
     @IBOutlet weak var carousel: iCarousel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    var comicContents: [ComicContent] = []
+    var comicContents: [MangaContent] = []
     
     var loader: ComicContentLoader?
     
@@ -48,7 +48,7 @@ extension ComicPagesViewController: ComicContentProtocol {
         loadingIndicator.stopAnimating()
     }
     
-    func onSuccess(comicContents: [ComicContent]) {
+    func onSuccess(comicContents: [MangaContent]) {
         self.comicContents = comicContents
         carousel.reloadData()
     }

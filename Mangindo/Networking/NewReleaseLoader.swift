@@ -23,7 +23,7 @@ class NewReleaseLoader {
         Alamofire.request(ApiURL.newReleased).responseObject { (response: DataResponse<NewReleasedResponse>) in
             self.callback?.stopLoading()
             if response.result.isSuccess, let response = response.result.value {
-                self.callback?.onSuccess(newReleasedComics: response.comics)
+                self.callback?.onSuccess(newReleasedComics: response.mangas)
             } else {
                 self.callback?.onError(message: response.error?.localizedDescription ?? "Could not fetch data.")
             }
@@ -35,6 +35,6 @@ class NewReleaseLoader {
 protocol NewReleaseProtocol: class {
     func startLoading()
     func stopLoading()
-    func onSuccess(newReleasedComics: [Comic])
+    func onSuccess(newReleasedComics: [Manga])
     func onError(message: String)
 }

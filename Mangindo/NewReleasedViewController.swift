@@ -15,7 +15,7 @@ class NewReleasedViewController: UIViewController, NewReleaseProtocol {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     let newReleaseCellID = "NewReleasedViewCell"
-    var newReleasedComics: [Comic] = []
+    var newReleasedComics: [Manga] = []
     
     var loader: NewReleaseLoader?
     
@@ -42,9 +42,7 @@ class NewReleasedViewController: UIViewController, NewReleaseProtocol {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showChapters" {
-            let controller = segue.destination as! ChaptersViewController
-            controller.pageTitle = selectedTitle
-            controller.comicTitleId = selectedTitleId
+            ChaptersModule(segue: segue).instantiate(pageTitle: selectedTitle, mangaTitleId: selectedTitleId)
         }
     }
     
@@ -56,7 +54,7 @@ class NewReleasedViewController: UIViewController, NewReleaseProtocol {
         loadingIndicator.stopAnimating()
     }
     
-    func onSuccess(newReleasedComics: [Comic]) {
+    func onSuccess(newReleasedComics: [Manga]) {
         self.newReleasedComics = newReleasedComics
         newReleaseCollectionView.reloadData()
     }
@@ -85,7 +83,7 @@ extension NewReleasedViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedViewCell
-        cell.newReleasedComic = newReleasedComics[indexPath.item]
+        cell.newReleasedManga = newReleasedComics[indexPath.item]
         return cell
     }
     
