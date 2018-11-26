@@ -1,5 +1,5 @@
 //
-//  ComicPagesViewController.swift
+//  ContentsViewController.swift
 //  Mangindo
 //
 //  Created by Gallant Pratama on 8/30/17.
@@ -9,18 +9,13 @@
 import UIKit
 import iCarousel
 
-class ComicPagesViewController: UIViewController {
+class ContentsViewController: UIViewController {
     
     @IBOutlet weak var carousel: iCarousel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    var comicContents: [MangaContent] = []
-    
-    var loader: ComicContentLoader?
-    
     var pageTitle = "Manga Content"
-    var comicTitleId = ""
-    var comicChapterNumber = 0
+    var presenter: IContentsPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +27,12 @@ class ComicPagesViewController: UIViewController {
         carousel.bounces = false
         carousel.isScrollEnabled = true
         
-        loader = ComicContentLoader(comicTitleId: comicTitleId, chapterNumber: comicChapterNumber, callback: self as ComicContentProtocol)
-        loader?.getComicContents()
+        presenter.fetchContents()
     }
 
 }
 
-extension ComicPagesViewController: ComicContentProtocol {
+extension ContentsViewController: IContentsView {
     
     func startLoading() {
         loadingIndicator.startAnimating()
@@ -48,31 +42,30 @@ extension ComicPagesViewController: ComicContentProtocol {
         loadingIndicator.stopAnimating()
     }
     
-    func onSuccess(comicContents: [MangaContent]) {
-        self.comicContents = comicContents
+    func showData() {
         carousel.reloadData()
     }
     
-    func onError(message: String) {
+    func showAlert(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { action in
-            self.loader?.getComicContents()
+            self.presenter.fetchContents()
         }))
         self.present(alert, animated: true, completion: nil)
     }
 }
 
-extension ComicPagesViewController: iCarouselDelegate, iCarouselDataSource {
+extension ContentsViewController: iCarouselDelegate, iCarouselDataSource {
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        return comicContents.count
+        return presenter.contents.count
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
         let pageRect = CGRect(x: 0, y: 0, width: carousel.frame.width, height: carousel.frame.height)
-        let imageUrl = comicContents[index].imageUrl
-        let pageView = ComicPageView(frame: pageRect, imageUrl: imageUrl, pageNumber: index)
+        let imageUrl = presenter.contents[index].imageUrl
+        let pageView = ContentView(frame: pageRect, imageUrl: imageUrl, pageNumber: index)
         return pageView
     }
 }

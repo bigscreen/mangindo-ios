@@ -23,7 +23,8 @@ class ChaptersPresenter: IChaptersPresenter {
     
     func fetchChapters() {
         view?.startLoading()
-        service.getChapters(mangaTitleId: mangaTitleId,
+        service.getChapters(
+            mangaTitleId: mangaTitleId,
             success: { chapters in
                 self.chapters = chapters
                 self.view?.showData()

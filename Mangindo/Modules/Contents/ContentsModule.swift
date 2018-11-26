@@ -1,5 +1,5 @@
 //
-//  ChaptersModule.swift
+//  ContentsModule.swift
 //  Mangindo
 //
 //  Created by Gallant Pratama on 27/11/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChaptersModule {
+class ContentsModule {
     
     private let segue: UIStoryboardSegue
     
@@ -16,9 +16,9 @@ class ChaptersModule {
         self.segue = segue
     }
     
-    func instantiate(pageTitle: String, mangaTitleId: String) {
-        let controller = segue.destination as! ChaptersViewController
-        let presenter = ChaptersPresenter(view: controller, service: NetworkService.shared, mangaTitleId: mangaTitleId)
+    func instantiate(pageTitle: String, mangaTitleId: String, chapter: Int) {
+        let controller = segue.destination as! ContentsViewController
+        let presenter = ContentsPresenter(view: controller, service: NetworkService.shared, mangaTitleId: mangaTitleId, chapter: chapter)
         controller.pageTitle = pageTitle
         controller.presenter = presenter
     }

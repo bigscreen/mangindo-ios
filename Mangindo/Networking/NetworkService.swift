@@ -13,7 +13,7 @@ import AlamofireObjectMapper
 protocol INetworkService {
     func getNewReleased(success: @escaping ObjCallback<[Manga]>, error: @escaping ObjCallback<String>)
     func getChapters(mangaTitleId: String, success: @escaping ObjCallback<[Chapter]>, error: @escaping ObjCallback<String>, completion: Callback?)
-    func getMangaContents(mangaTitleId: String, chapter: String, success: @escaping ObjCallback<[MangaContent]>, error: @escaping ObjCallback<String>)
+    func getContents(mangaTitleId: String, chapter: Int, success: @escaping ObjCallback<[Content]>, error: @escaping ObjCallback<String>, completion: Callback?)
 }
 
 class NetworkService: INetworkService {
@@ -42,11 +42,12 @@ class NetworkService: INetworkService {
         }
     }
     
-    func getMangaContents(mangaTitleId: String, chapter: String, success: @escaping ObjCallback<[MangaContent]>, error: @escaping ObjCallback<String>) {
-        let url = "\(ApiURL.mangaContent)?manga=\(mangaTitleId)&chapter=\(chapter)"
-        Alamofire.request(url).responseObject { (response: DataResponse<MangaContentResponse>) in
+    func getContents(mangaTitleId: String, chapter: Int, success: @escaping ObjCallback<[Content]>, error: @escaping ObjCallback<String>, completion: Callback? = nil) {
+        let url = "\(ApiURL.contents)?manga=\(mangaTitleId)&chapter=\(chapter)"
+        Alamofire.request(url).responseObject { (response: DataResponse<ContentsResponse>) in
+            completion?()
             if response.result.isSuccess, let response = response.result.value {
-                success(response.mangaContents)
+                success(response.contents)
             } else {
                 error(response.error?.localizedDescription ?? "Could not fetch manga images")
             }

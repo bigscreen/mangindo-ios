@@ -27,10 +27,11 @@ class ChaptersViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showComicPages" {
-            let controller = segue.destination as! ComicPagesViewController
-            controller.pageTitle = "\(pageTitle) \(presenter.selectedChapterNumber)"
-            controller.comicTitleId = presenter.mangaTitleId
-            controller.comicChapterNumber = presenter.selectedChapterNumber
+            ContentsModule(segue: segue).instantiate(
+                pageTitle: "\(pageTitle) \(presenter.selectedChapterNumber)",
+                mangaTitleId: presenter.mangaTitleId,
+                chapter: presenter.selectedChapterNumber
+            )
         }
     }
 

@@ -6,14 +6,7 @@
 //  Copyright © 2018 Gallant Pratama. All rights reserved.
 //
 
-import Foundation
-
-protocol IChaptersView: class {
-    func startLoading()
-    func stopLoading()
-    func showData()
-    func showAlert(message: String)
-}
+protocol IChaptersView: BaseView { }
 
 protocol IChaptersPresenter {
     var mangaTitleId: String { get }

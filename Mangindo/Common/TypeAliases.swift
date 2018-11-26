@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TypeAliases.swift
 //  Mangindo
 //
 //  Created by Gallant Pratama on 26/11/18.
