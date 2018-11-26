@@ -9,42 +9,37 @@
 import UIKit
 import SDWebImage
 
-class NewReleasedViewController: UIViewController, NewReleaseProtocol {
+class NewReleasedViewController: UIViewController {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    let newReleaseCellID = "NewReleasedViewCell"
-    var newReleasedComics: [Manga] = []
+    internal let newReleaseCellID = "NewReleasedViewCell"
     
-    var loader: NewReleaseLoader?
-    
-    var selectedTitle = ""
-    var selectedTitleId = ""
+    var presenter: INewReleasedPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let emptyImage = UIImage()
         self.navigationController?.navigationBar.shadowImage = emptyImage
         self.navigationController?.navigationBar.setBackgroundImage(emptyImage, for: UIBarMetrics.default)
-        setupCollectionView()
-        loader = NewReleaseLoader(callback: self as NewReleaseProtocol)
-        loader?.getNewRelease()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func setupCollectionView() {
-        newReleaseCollectionView.register(UINib(nibName: "NewReleasedViewCell", bundle: nil), forCellWithReuseIdentifier: newReleaseCellID)
+        newReleaseCollectionView.register(UINib(nibName: newReleaseCellID, bundle: nil), forCellWithReuseIdentifier: newReleaseCellID)
+        presenter = NewReleasedPresenter(view: self, service: NetworkService.shared)
+        presenter.fetchNewReleased()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showChapters" {
-            ChaptersModule(segue: segue).instantiate(pageTitle: selectedTitle, mangaTitleId: selectedTitleId)
+            ChaptersModule(segue: segue).instantiate(
+                pageTitle: presenter.selectedTitle,
+                mangaTitleId: presenter.selectedTitleId
+            )
         }
     }
+    
+}
+
+extension NewReleasedViewController: INewReleasedView {
     
     func startLoading() {
         loadingIndicator.startAnimating()
@@ -54,16 +49,15 @@ class NewReleasedViewController: UIViewController, NewReleaseProtocol {
         loadingIndicator.stopAnimating()
     }
     
-    func onSuccess(newReleasedComics: [Manga]) {
-        self.newReleasedComics = newReleasedComics
+    func showData() {
         newReleaseCollectionView.reloadData()
     }
     
-    func onError(message: String) {
+    func showAlert(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { action in
-            self.loader?.getNewRelease()
+            self.presenter.fetchNewReleased()
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -72,7 +66,7 @@ class NewReleasedViewController: UIViewController, NewReleaseProtocol {
 extension NewReleasedViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newReleasedComics.count
+        return presenter.mangas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -83,14 +77,12 @@ extension NewReleasedViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newReleaseCellID, for: indexPath as IndexPath) as! NewReleasedViewCell
-        cell.newReleasedManga = newReleasedComics[indexPath.item]
+        cell.newReleasedManga = presenter.mangas[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let comic = newReleasedComics[indexPath.item]
-        selectedTitle = comic.title
-        selectedTitleId = comic.titleId
+        presenter.selectManga(index: indexPath.item)
         self.performSegue(withIdentifier: "showChapters", sender: self)
     }
     

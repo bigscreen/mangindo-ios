@@ -11,7 +11,7 @@ import ObjectMapper
 import AlamofireObjectMapper
 
 protocol INetworkService {
-    func getNewReleased(success: @escaping ObjCallback<[Manga]>, error: @escaping ObjCallback<String>)
+    func getNewReleased(success: @escaping ObjCallback<[Manga]>, error: @escaping ObjCallback<String>, completion: Callback?)
     func getChapters(mangaTitleId: String, success: @escaping ObjCallback<[Chapter]>, error: @escaping ObjCallback<String>, completion: Callback?)
     func getContents(mangaTitleId: String, chapter: Int, success: @escaping ObjCallback<[Content]>, error: @escaping ObjCallback<String>, completion: Callback?)
 }
@@ -20,8 +20,9 @@ class NetworkService: INetworkService {
     
     static let shared = NetworkService()
     
-    func getNewReleased(success: @escaping ObjCallback<[Manga]>, error: @escaping ObjCallback<String>) {
+    func getNewReleased(success: @escaping ObjCallback<[Manga]>, error: @escaping ObjCallback<String>, completion: Callback? = nil) {
         Alamofire.request(ApiURL.newReleased).responseObject { (response: DataResponse<NewReleasedResponse>) in
+            completion?()
             if response.result.isSuccess, let response = response.result.value {
                 success(response.mangas)
             } else {
