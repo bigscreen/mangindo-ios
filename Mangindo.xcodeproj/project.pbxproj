@@ -30,7 +30,6 @@
 		71C50DED1E56EA30004010AF /* MangindoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DEC1E56EA30004010AF /* MangindoTests.swift */; };
 		71C50DF81E56EA30004010AF /* MangindoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DF71E56EA30004010AF /* MangindoUITests.swift */; };
 		71FDB7B91F556ADB008B8C31 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7B71F556ADB008B8C31 /* AppColor.swift */; };
-		71FDB7BA1F556ADB008B8C31 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7B81F556ADB008B8C31 /* MockedData.swift */; };
 		71FDB7BF1F556AEE008B8C31 /* ChaptersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7BB1F556AEE008B8C31 /* ChaptersResponse.swift */; };
 		71FDB7C11F556AEE008B8C31 /* ContentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7BD1F556AEE008B8C31 /* ContentsResponse.swift */; };
 		71FDB7C21F556AEE008B8C31 /* NewReleasedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FDB7BE1F556AEE008B8C31 /* NewReleasedResponse.swift */; };
@@ -96,7 +95,6 @@
 		71C50DF71E56EA30004010AF /* MangindoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangindoUITests.swift; sourceTree = "<group>"; };
 		71C50DF91E56EA30004010AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71FDB7B71F556ADB008B8C31 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		71FDB7B81F556ADB008B8C31 /* MockedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		71FDB7BB1F556AEE008B8C31 /* ChaptersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersResponse.swift; sourceTree = "<group>"; };
 		71FDB7BD1F556AEE008B8C31 /* ContentsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsResponse.swift; sourceTree = "<group>"; };
 		71FDB7BE1F556AEE008B8C31 /* NewReleasedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasedResponse.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				71223A7B21AC501B00C7E0D5 /* TypeAliases.swift */,
 				71223A8E21AC754700C7E0D5 /* BaseView.swift */,
 				71FDB7B71F556ADB008B8C31 /* AppColor.swift */,
-				71FDB7B81F556ADB008B8C31 /* MockedData.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -547,7 +544,6 @@
 			files = (
 				71FDB7C21F556AEE008B8C31 /* NewReleasedResponse.swift in Sources */,
 				71FDB7B91F556ADB008B8C31 /* AppColor.swift in Sources */,
-				71FDB7BA1F556ADB008B8C31 /* MockedData.swift in Sources */,
 				71FDB7BF1F556AEE008B8C31 /* ChaptersResponse.swift in Sources */,
 				71FDB7D61F56741F008B8C31 /* ContentView.swift in Sources */,
 				71FDB7DB1F56A8F7008B8C31 /* UIColor.swift in Sources */,
