@@ -10,11 +10,13 @@ import UIKit
 
 class ChapterViewCell: UITableViewCell {
     
+    @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var labelChapter: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        initCell()
     }
     
     var mangaChapter: Chapter? {
@@ -30,6 +32,19 @@ class ChapterViewCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    private func initCell() {
+        self.backgroundColor = UIColor.white
+        self.selectionStyle = .none
+    }
+    
+    func setHighlighted() {
+        viewCell.backgroundColor = AppColor.greyLight
+    }
+    
+    func setUnhighlighted() {
+        viewCell.backgroundColor = UIColor.white
     }
     
 }

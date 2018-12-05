@@ -73,30 +73,28 @@ extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter.chapters.count
+        return presenter.chapters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellID, for: indexPath as IndexPath) as! ChapterViewCell
-        cell.backgroundColor = UIColor.white
-        cell.selectionStyle = .none
-        cell.mangaChapter = self.presenter.chapters[indexPath.row]
+        cell.mangaChapter = presenter.chapters[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter.updateSelectedChapterNumber(index: indexPath.row)
-        self.performSegue(withIdentifier: "showComicPages", sender: self)
+        presenter.updateSelectedChapterNumber(index: indexPath.row)
+        performSegue(withIdentifier: "showComicPages", sender: self)
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellID, for: indexPath as IndexPath) as! ChapterViewCell
-        cell.backgroundColor = AppColor.greyLight
+        let cell = tableView.cellForRow(at: indexPath) as! ChapterViewCell
+        cell.setHighlighted()
     }
     
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellID, for: indexPath as IndexPath) as! ChapterViewCell
-        cell.backgroundColor = UIColor.white
+        let cell = tableView.cellForRow(at: indexPath) as! ChapterViewCell
+        cell.setUnhighlighted()
     }
 
 }
