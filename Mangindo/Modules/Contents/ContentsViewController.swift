@@ -67,9 +67,8 @@ extension ContentsViewController: iCarouselDelegate, iCarouselDataSource {
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
-        let pageRect = CGRect(x: 0, y: 0, width: carousel.frame.width, height: carousel.frame.height)
-        let imageUrl = presenter.contents[index].imageUrl
-        let pageView = ContentView(frame: pageRect, imageUrl: imageUrl, pageNumber: index)
+        let pageView = ContentZoomableView(frame: CGRect(x: 0, y: 0, width: carousel.frame.width, height: carousel.frame.height))
+        pageView.imageUrl = presenter.contents[index].imageUrl
         return pageView
     }
 }

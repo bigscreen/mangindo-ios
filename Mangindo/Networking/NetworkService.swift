@@ -56,7 +56,7 @@ class NetworkService: INetworkService {
         startRequest(
             url,
             success: { (response: ContentsResponse) in
-                success(response.contents)
+                success(response.nonAdsContents)
             },
             error: { errorMessage in
                 error(errorMessage)

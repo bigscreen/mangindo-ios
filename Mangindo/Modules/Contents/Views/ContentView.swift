@@ -6,28 +6,60 @@
 //  Copyright © 2017 Gallant Pratama. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class ContentView: UIView {
     
-    private var mangaImageView: UIImageView!
-    private var pageNumberLabel: UILabel!
+    fileprivate var mangaImageView: UIImageView? = nil {
+        didSet {
+            if let imageView = mangaImageView {
+                imageView.translatesAutoresizingMaskIntoConstraints = false
+                imageView.contentMode = .scaleAspectFit
+                let mangaImageViewDict: [String: UIImageView] = ["mangaImage": imageView]
+                self.addSubview(imageView)
+                self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[mangaImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: mangaImageViewDict))
+                self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[mangaImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: mangaImageViewDict))
+            }
+        }
+    }
     
-    private var imageUrl: String?
-    private var pageNumber: Int?
+    fileprivate var pageNumberLabel: UILabel? = nil {
+        didSet {
+            if let label = pageNumberLabel {
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.textColor = UIColor(red: 47, green: 47, blue: 47)
+                label.font = label.font.withSize(12)
+                label.textAlignment = .center
+                label.backgroundColor = UIColor.white
+                label.layer.cornerRadius = 9
+                label.layer.masksToBounds = true
+                let pageNumberLabelDict: [String: UILabel] = ["pageLabel": label]
+                self.addSubview(label)
+                self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[pageLabel(18)]-12-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
+                self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[pageLabel(18)]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
+            }
+        }
+    }
+    
+    var imageUrl: String? = nil {
+        didSet {
+            if let url = imageUrl, let imageView = mangaImageView {
+                imageView.sd_setImage(with: URL(string: url))
+            }
+        }
+    }
+    
+    var pageNumber: Int? = nil {
+        didSet {
+            if let number = pageNumber, let label = pageNumberLabel {
+                label.text = "\(number)"
+            }
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-    }
-    
-    init(frame: CGRect, imageUrl: String, pageNumber: Int) {
-        super.init(frame: frame)
-        self.imageUrl = imageUrl
-        self.pageNumber = pageNumber
-        setupViews()
-        setupContents()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,49 +68,7 @@ class ContentView: UIView {
     
     private func setupViews() {
         mangaImageView = UIImageView()
-        mangaImageView.translatesAutoresizingMaskIntoConstraints = false
-        mangaImageView.contentMode = .scaleAspectFit
         pageNumberLabel = UILabel()
-        pageNumberLabel.translatesAutoresizingMaskIntoConstraints = false
-        pageNumberLabel.textColor = UIColor(red: 47, green: 47, blue: 47)
-        pageNumberLabel.font = pageNumberLabel.font.withSize(11)
-        pageNumberLabel.textAlignment = .center
-        pageNumberLabel.backgroundColor = UIColor.white
-        pageNumberLabel.layer.cornerRadius = 9
-        pageNumberLabel.layer.masksToBounds = true
-        setupConstraints()
     }
     
-    private func setupConstraints() {
-        let mangaImageViewDict: [String: UIImageView] = ["mangaImage": mangaImageView]
-        let pageNumberLabelDict: [String: UILabel] = ["pageLabel": pageNumberLabel]
-        
-        self.addSubview(mangaImageView)
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[mangaImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: mangaImageViewDict))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[mangaImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: mangaImageViewDict))
-        
-        self.addSubview(pageNumberLabel)
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[pageLabel(18)]-12-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[pageLabel(18)]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
-    }
-    
-    private func setupContents() {
-        if let url = imageUrl {
-            mangaImageView.sd_setImage(with: URL(string: url))
-        }
-        if let page = pageNumber {
-            pageNumberLabel.text = "\(page + 1)"
-        }
-    }
-    
-    func setImageUrl(imageUrl: String) {
-        self.imageUrl = imageUrl
-        setupContents()
-    }
-    
-    func setPageNumber(pageNumber: Int) {
-        self.pageNumber = pageNumber
-        setupContents()
-    }
-
 }

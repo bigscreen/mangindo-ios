@@ -12,6 +12,10 @@ class ContentsResponse: Mappable {
     
     var contents: [Content] = []
     
+    lazy var nonAdsContents: [Content] = {
+        return self.contents.filter { $0.imageUrl.isNotAddUrl() }
+    }()
+    
     required init?(map: Map) {
     }
     
