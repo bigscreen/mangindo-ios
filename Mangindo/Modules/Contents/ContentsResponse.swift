@@ -1,5 +1,5 @@
 //
-//  ComicContentResponse.swift
+//  ContentsResponse.swift
 //  Mangindo
 //
 //  Created by Gallant Pratama on 4/23/17.
@@ -8,20 +8,20 @@
 
 import ObjectMapper
 
-class ComicContentResponse: Mappable {
+class ContentsResponse: Mappable {
     
-    var comicContents: [ComicContent] = []
+    var contents: [Content] = []
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        comicContents <- map["chapter"]
+        contents <- map["chapter"]
     }
     
 }
 
-class ComicContent: Mappable {
+class Content: Mappable {
     
     var imageUrl: String = ""
     

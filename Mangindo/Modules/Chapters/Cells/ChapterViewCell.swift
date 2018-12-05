@@ -17,9 +17,9 @@ class ChapterViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    var comicChapter: Chapter? {
+    var mangaChapter: Chapter? {
         didSet {
-            if let chapter = comicChapter {
+            if let chapter = mangaChapter {
                 let titleStringArray = chapter.title.components(separatedBy: " - ")
                 if titleStringArray.count == 2 {
                     labelChapter.text = titleStringArray[0]

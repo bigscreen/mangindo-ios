@@ -15,7 +15,7 @@ extension UIColor {
         let characterSet = (CharacterSet.whitespacesAndNewlines as NSCharacterSet).mutableCopy() as! NSMutableCharacterSet
         characterSet.formUnion(with: CharacterSet(charactersIn: "#"))
         let cString = hex.trimmingCharacters(in: characterSet as CharacterSet).uppercased()
-        if (cString.characters.count != 6) {
+        if (cString.count != 6) {
             self.init(white: 1.0, alpha: 1.0)
         } else {
             var rgbValue: UInt32 = 0

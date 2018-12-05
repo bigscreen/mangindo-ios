@@ -8,40 +8,36 @@
 
 import UIKit
 
-class ChaptersViewController: UIViewController, ChaptersProtocol {
+class ChaptersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    let chapterCellID = "ChapterViewCell"
-    var chapters: [Chapter] = []
-    
-    var loader: ChaptersLoader?
+    internal let chapterCellID = "ChapterViewCell"
     
     var pageTitle = "Chapters"
-    var comicTitleId = ""
-    var selectedChapterNumber = 0
+    var presenter: IChaptersPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = pageTitle
-        setupTableView()
-        loader = ChaptersLoader(comicTitleId: comicTitleId, callback: self as ChaptersProtocol)
-        loader?.getChapters()
+        tableView.register(UINib(nibName: chapterCellID, bundle: nil), forCellReuseIdentifier: chapterCellID)
+        presenter.fetchChapters()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showComicPages" {
-            let controller = segue.destination as! ComicPagesViewController
-            controller.pageTitle = "\(pageTitle) \(selectedChapterNumber)"
-            controller.comicTitleId = comicTitleId
-            controller.comicChapterNumber = selectedChapterNumber
+            ContentsModule(segue: segue).instantiate(
+                pageTitle: "\(pageTitle) \(presenter.selectedChapterNumber)",
+                mangaTitleId: presenter.mangaTitleId,
+                chapter: presenter.selectedChapterNumber
+            )
         }
     }
 
-    func setupTableView() {
-        tableView.register(UINib(nibName: "ChapterViewCell", bundle: nil), forCellReuseIdentifier: "ChapterViewCell")
-    }
+}
+
+extension ChaptersViewController: IChaptersView {
     
     func startLoading() {
         loadingIndicator.startAnimating()
@@ -51,20 +47,23 @@ class ChaptersViewController: UIViewController, ChaptersProtocol {
         loadingIndicator.stopAnimating()
     }
     
-    func onSuccess(chapters: [Chapter]) {
-        self.chapters = chapters
+    func showData() {
         tableView.reloadData()
     }
     
-    func onError(message: String) {
+    func showAlert(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { action in
-            self.loader?.getChapters()
+        alert.addAction(UIAlertAction(title: "Back", style: UIAlertActionStyle.default, handler: { _ in
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { _ in
+            self.presenter.fetchChapters()
         }))
         self.present(alert, animated: true, completion: nil)
     }
-
+    
 }
 
 extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
@@ -74,21 +73,19 @@ extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.chapters.count
+        return self.presenter.chapters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: chapterCellID, for: indexPath as IndexPath) as! ChapterViewCell
         cell.backgroundColor = UIColor.white
         cell.selectionStyle = .none
-        
-        cell.comicChapter = chapters[indexPath.row]
-        
+        cell.mangaChapter = self.presenter.chapters[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedChapterNumber = chapters[indexPath.row].number
+        self.presenter.updateSelectedChapterNumber(index: indexPath.row)
         self.performSegue(withIdentifier: "showComicPages", sender: self)
     }
     

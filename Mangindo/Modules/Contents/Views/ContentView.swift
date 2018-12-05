@@ -1,5 +1,5 @@
 //
-//  ComicPageView.swift
+//  ContentView.swift
 //  Mangindo
 //
 //  Created by Gallant Pratama on 8/30/17.
@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class ComicPageView: UIView {
+class ContentView: UIView {
     
-    private var comicImageView: UIImageView!
+    private var mangaImageView: UIImageView!
     private var pageNumberLabel: UILabel!
     
     private var imageUrl: String?
@@ -35,9 +35,9 @@ class ComicPageView: UIView {
     }
     
     private func setupViews() {
-        comicImageView = UIImageView()
-        comicImageView.translatesAutoresizingMaskIntoConstraints = false
-        comicImageView.contentMode = .scaleAspectFit
+        mangaImageView = UIImageView()
+        mangaImageView.translatesAutoresizingMaskIntoConstraints = false
+        mangaImageView.contentMode = .scaleAspectFit
         pageNumberLabel = UILabel()
         pageNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         pageNumberLabel.textColor = UIColor(red: 47, green: 47, blue: 47)
@@ -50,12 +50,12 @@ class ComicPageView: UIView {
     }
     
     private func setupConstraints() {
-        let comicImageViewDict: [String: UIImageView] = ["comicImage": comicImageView]
+        let mangaImageViewDict: [String: UIImageView] = ["mangaImage": mangaImageView]
         let pageNumberLabelDict: [String: UILabel] = ["pageLabel": pageNumberLabel]
         
-        self.addSubview(comicImageView)
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[comicImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: comicImageViewDict))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[comicImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: comicImageViewDict))
+        self.addSubview(mangaImageView)
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[mangaImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: mangaImageViewDict))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[mangaImage]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: mangaImageViewDict))
         
         self.addSubview(pageNumberLabel)
         self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[pageLabel(18)]-12-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: pageNumberLabelDict))
@@ -64,7 +64,7 @@ class ComicPageView: UIView {
     
     private func setupContents() {
         if let url = imageUrl {
-            comicImageView.sd_setImage(with: URL(string: url))
+            mangaImageView.sd_setImage(with: URL(string: url))
         }
         if let page = pageNumber {
             pageNumberLabel.text = "\(page + 1)"
