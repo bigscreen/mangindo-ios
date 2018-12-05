@@ -48,8 +48,12 @@ extension ContentsViewController: IContentsView {
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Back", style: UIAlertActionStyle.default, handler: { _ in
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { _ in
             self.presenter.fetchContents()
         }))
         self.present(alert, animated: true, completion: nil)

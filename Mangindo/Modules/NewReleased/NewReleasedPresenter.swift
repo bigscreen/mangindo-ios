@@ -10,6 +10,7 @@ class NewReleasedPresenter: INewReleasedPresenter {
     
     private weak var view: INewReleasedView?
     private let service: INetworkService
+    private var originalMangas: [Manga] = []
     
     var mangas: [Manga] = []
     var selectedTitle: String = ""
@@ -24,6 +25,7 @@ class NewReleasedPresenter: INewReleasedPresenter {
         view?.startLoading()
         service.getNewReleased(
             success: { mangas in
+                self.originalMangas = mangas
                 self.mangas = mangas
                 self.view?.showData()
             },
@@ -39,6 +41,16 @@ class NewReleasedPresenter: INewReleasedPresenter {
     func selectManga(index: Int) {
         selectedTitle = mangas[index].title
         selectedTitleId = mangas[index].titleId
+    }
+    
+    func search(mangaName: String) {
+        let lowercasedName = mangaName.lowercased()
+        if lowercasedName.isEmpty {
+            mangas = originalMangas
+        } else {
+            mangas = originalMangas.filter { $0.title.lowercased().contains(lowercasedName) }
+        }
+        view?.showData()
     }
     
 }

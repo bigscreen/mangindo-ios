@@ -20,6 +20,7 @@
 		71223A9321AC7AB700C7E0D5 /* ContentsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71223A9221AC7AB700C7E0D5 /* ContentsModule.swift */; };
 		71223A9721AC81DE00C7E0D5 /* NewReleasedContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71223A9621AC81DE00C7E0D5 /* NewReleasedContracts.swift */; };
 		71223A9921AC82FC00C7E0D5 /* NewReleasedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71223A9821AC82FC00C7E0D5 /* NewReleasedPresenter.swift */; };
+		71223A9C21ACF48C00C7E0D5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71223A9B21ACF48C00C7E0D5 /* Logger.swift */; };
 		71617F701EAA7A560067A8D7 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71617F6F1EAA7A560067A8D7 /* ApiURL.swift */; };
 		71B48B021EA9E8F4007F8865 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */; };
 		71C50DD81E56EA30004010AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50DD71E56EA30004010AF /* AppDelegate.swift */; };
@@ -79,6 +80,7 @@
 		71223A9221AC7AB700C7E0D5 /* ContentsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsModule.swift; sourceTree = "<group>"; };
 		71223A9621AC81DE00C7E0D5 /* NewReleasedContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasedContracts.swift; sourceTree = "<group>"; };
 		71223A9821AC82FC00C7E0D5 /* NewReleasedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasedPresenter.swift; sourceTree = "<group>"; };
+		71223A9B21ACF48C00C7E0D5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		71617F6F1EAA7A560067A8D7 /* ApiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiURL.swift; path = /Users/gallant/XCodeProject/Mangindo/Mangindo/Networking/ApiURL.swift; sourceTree = "<absolute>"; };
 		71B48B011EA9E8F4007F8865 /* ChaptersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
 		71C50DD41E56EA30004010AF /* Mangindo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mangindo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				71223A7B21AC501B00C7E0D5 /* TypeAliases.swift */,
 				71223A8E21AC754700C7E0D5 /* BaseView.swift */,
 				71FDB7B71F556ADB008B8C31 /* AppColor.swift */,
+				71223A9B21ACF48C00C7E0D5 /* Logger.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				71FDB7CD1F556B06008B8C31 /* NewReleasedViewCell.swift in Sources */,
 				71FDB7C11F556AEE008B8C31 /* ContentsResponse.swift in Sources */,
 				71223A8F21AC754700C7E0D5 /* BaseView.swift in Sources */,
+				71223A9C21ACF48C00C7E0D5 /* Logger.swift in Sources */,
 				71223A8121AC54D500C7E0D5 /* ChaptersContracts.swift in Sources */,
 				71FDB7D81F567B32008B8C31 /* ContentsViewController.swift in Sources */,
 				71B48B021EA9E8F4007F8865 /* ChaptersViewController.swift in Sources */,

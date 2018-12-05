@@ -13,6 +13,7 @@ class NewReleasedViewController: UIViewController {
     
     @IBOutlet weak var newReleaseCollectionView: UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var searchTextField: UITextField!
     
     internal let newReleaseCellID = "NewReleasedViewCell"
     
@@ -24,6 +25,7 @@ class NewReleasedViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = emptyImage
         self.navigationController?.navigationBar.setBackgroundImage(emptyImage, for: UIBarMetrics.default)
         newReleaseCollectionView.register(UINib(nibName: newReleaseCellID, bundle: nil), forCellWithReuseIdentifier: newReleaseCellID)
+        searchTextField.delegate = self
         presenter = NewReleasedPresenter(view: self, service: NetworkService.shared)
         presenter.fetchNewReleased()
     }
@@ -36,7 +38,26 @@ class NewReleasedViewController: UIViewController {
             )
         }
     }
+}
+
+extension NewReleasedViewController: UITextFieldDelegate {
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let searchText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) {
+            presenter.search(mangaName: searchText)
+        }
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        presenter.search(mangaName: "")
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }
 
 extension NewReleasedViewController: INewReleasedView {

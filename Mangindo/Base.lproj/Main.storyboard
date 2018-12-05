@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PQA-pK-pZl">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-3B-ZTC" userLabel="newReleseCollectionView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="6" minimumInteritemSpacing="6" id="twF-Dk-nWo">
                                     <size key="itemSize" width="113" height="170"/>
@@ -38,13 +38,25 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odR-IL-XMN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Manga" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="toI-J6-eIl" userLabel="Search Text Field">
+                                        <rect key="frame" x="12" y="5" width="351" height="29"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="toI-J6-eIl" secondAttribute="trailing" constant="12" id="0x8-OA-jtF"/>
                                     <constraint firstAttribute="height" constant="40" id="5sY-gy-15H"/>
+                                    <constraint firstItem="toI-J6-eIl" firstAttribute="top" secondItem="odR-IL-XMN" secondAttribute="top" constant="5" id="hds-t9-cOq"/>
+                                    <constraint firstAttribute="bottom" secondItem="toI-J6-eIl" secondAttribute="bottom" constant="6" id="pwB-JJ-izA"/>
+                                    <constraint firstItem="toI-J6-eIl" firstAttribute="leading" secondItem="odR-IL-XMN" secondAttribute="leading" constant="12" id="rLE-TZ-chV"/>
                                 </constraints>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ymI-gK-sOg" userLabel="Loading Indicator">
-                                <rect key="frame" x="170" y="284" width="35" height="35"/>
+                                <rect key="frame" x="170" y="327.66666666666669" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="8hg-R4-NU4"/>
                                     <constraint firstAttribute="height" constant="35" id="VuR-fg-iXa"/>
@@ -71,6 +83,7 @@
                     <connections>
                         <outlet property="loadingIndicator" destination="ymI-gK-sOg" id="sge-dW-DRO"/>
                         <outlet property="newReleaseCollectionView" destination="p8N-3B-ZTC" id="3gC-LC-nPJ"/>
+                        <outlet property="searchTextField" destination="toI-J6-eIl" id="puP-fV-PIu"/>
                         <segue destination="Qju-3t-beh" kind="show" identifier="showChapters" id="Dvm-TJ-eCr"/>
                     </connections>
                 </viewController>
@@ -87,11 +100,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4YJ-3Y-FbF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e1v-tg-A9m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-cw-Hvc" userLabel="Chapters Table View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <sections/>
@@ -101,7 +114,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="X8i-QB-uBD">
-                                <rect key="frame" x="170" y="284" width="35" height="35"/>
+                                <rect key="frame" x="170" y="327.66666666666669" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="249-6H-6zo"/>
                                     <constraint firstAttribute="width" constant="35" id="8dy-nn-kAF"/>
@@ -137,7 +150,7 @@
             <objects>
                 <navigationController id="PQA-pK-pZl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="s3G-2O-9oE">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -163,15 +176,15 @@
                         <viewControllerLayoutGuide type="bottom" id="DWs-00-Pjl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GOn-Yj-QfK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bD3-s9-BlG" userLabel="Carousel" customClass="iCarousel">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dq5-Kz-ZWg" userLabel="Loading Indicator View">
-                                <rect key="frame" x="170" y="284" width="35" height="35"/>
+                                <rect key="frame" x="170" y="327.66666666666669" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="LBf-lj-MJk"/>
                                     <constraint firstAttribute="width" constant="35" id="g1v-zz-Y0e"/>

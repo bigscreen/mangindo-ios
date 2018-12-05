@@ -14,4 +14,5 @@ protocol INewReleasedPresenter {
     var selectedTitleId: String { get }
     func fetchNewReleased()
     func selectManga(index: Int)
+    func search(mangaName: String)
 }
