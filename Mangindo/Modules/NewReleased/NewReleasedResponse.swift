@@ -23,6 +23,7 @@ class NewReleasedResponse: Mappable {
 
 class Manga: Mappable {
     
+    var id: String = ""
     var title: String = ""
     var titleId: String = ""
     var coverUrl: String = ""
@@ -33,6 +34,7 @@ class Manga: Mappable {
     }
     
     func mapping(map: Map) {
+        id <- map["id"]
         title <- map["judul"]
         titleId <- map["hidden_komik"]
         coverUrl <- map["icon_komik"]

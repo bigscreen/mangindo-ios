@@ -19,7 +19,7 @@ class ContentsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = pageTitle
+        self.navigationItem.title = presenter.getDisplayedNavTitle(pageTitle)
         
         carousel.delegate = self
         carousel.dataSource = self
@@ -47,7 +47,7 @@ extension ContentsViewController: IContentsView {
     }
     
     func showAlert(message: String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Back", style: UIAlertActionStyle.default, handler: { _ in
             if let navController = self.navigationController {
                 navController.popViewController(animated: true)

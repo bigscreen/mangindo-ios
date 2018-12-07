@@ -39,7 +39,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odR-IL-XMN" userLabel="Search Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Manga" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="toI-J6-eIl" userLabel="Search Text Field">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Manga" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="toI-J6-eIl" userLabel="Search Text Field">
                                         <rect key="frame" x="12" y="4" width="351" height="32"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -78,7 +78,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Released" id="hqA-7q-bat">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="GCa-70-1nP"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="4mh-SD-8B1"/>
                     </navigationItem>
                     <connections>
                         <outlet property="loadingIndicator" destination="ymI-gK-sOg" id="sge-dW-DRO"/>
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="-1946" y="16"/>
         </scene>
-        <!--Contents View Controller-->
+        <!--Contents-->
         <scene sceneID="aMN-tN-9P6">
             <objects>
-                <viewController id="9wO-hp-fCX" customClass="ContentsViewController" customModule="Mangindo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9wO-hp-fCX" userLabel="Contents" customClass="ContentsViewController" customModule="Mangindo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ikh-R0-lIK"/>
                         <viewControllerLayoutGuide type="bottom" id="DWs-00-Pjl"/>
@@ -202,6 +202,9 @@
                             <constraint firstAttribute="bottom" secondItem="bD3-s9-BlG" secondAttribute="bottom" id="h7I-Qb-pqJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Contents" id="n0v-dL-NUV" userLabel="Contents">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="OKD-My-i2p"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="carousel" destination="bD3-s9-BlG" id="nGZ-AR-gJk"/>
                         <outlet property="loadingIndicator" destination="dq5-Kz-ZWg" id="kPr-nV-YUW"/>

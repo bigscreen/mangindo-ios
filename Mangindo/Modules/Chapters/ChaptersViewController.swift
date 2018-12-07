@@ -13,14 +13,17 @@ class ChaptersViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    internal let chapterCellID = "ChapterViewCell"
+    fileprivate var reverseButtonItem: UIBarButtonItem?
+    fileprivate let chapterCellID = "ChapterViewCell"
     
     var pageTitle = "Chapters"
     var presenter: IChaptersPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = pageTitle
+        self.navigationItem.title = presenter.getDisplayedNavTitle(pageTitle)
+        self.reverseButtonItem = UIBarButtonItem(title: presenter.reverseButtonTitle, style: .plain, target: self, action: #selector(reverseButtonTap))
+        self.navigationItem.rightBarButtonItem = reverseButtonItem
         tableView.register(UINib(nibName: chapterCellID, bundle: nil), forCellReuseIdentifier: chapterCellID)
         presenter.fetchChapters()
     }
@@ -34,16 +37,22 @@ class ChaptersViewController: UIViewController {
             )
         }
     }
+    
+    @objc func reverseButtonTap() {
+        presenter.reverseChapters()
+    }
 
 }
 
 extension ChaptersViewController: IChaptersView {
     
     func startLoading() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         loadingIndicator.startAnimating()
     }
     
     func stopLoading() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
         loadingIndicator.stopAnimating()
     }
     
@@ -52,7 +61,7 @@ extension ChaptersViewController: IChaptersView {
     }
     
     func showAlert(message: String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Oops", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Back", style: UIAlertActionStyle.default, handler: { _ in
             if let navController = self.navigationController {
                 navController.popViewController(animated: true)
@@ -64,6 +73,9 @@ extension ChaptersViewController: IChaptersView {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func updateReverseButtonTitle() {
+        reverseButtonItem?.title = presenter.reverseButtonTitle
+    }
 }
 
 extension ChaptersViewController: UITableViewDataSource, UITableViewDelegate {

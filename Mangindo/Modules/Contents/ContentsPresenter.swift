@@ -39,4 +39,12 @@ class ContentsPresenter: IContentsPresenter {
             }
         )
     }
+    
+    func getDisplayedNavTitle(_ title: String) -> String {
+        if title.count <= 20 {
+            return title
+        } else {
+            return "\(title.prefix(20))..."
+        }
+    }
 }

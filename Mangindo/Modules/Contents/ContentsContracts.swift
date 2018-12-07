@@ -11,4 +11,5 @@ protocol IContentsView: BaseView { }
 protocol IContentsPresenter {
     var contents: [Content] { get }
     func fetchContents()
+    func getDisplayedNavTitle(_ title: String) -> String
 }

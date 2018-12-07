@@ -25,7 +25,7 @@ class NewReleasedPresenter: INewReleasedPresenter {
         view?.startLoading()
         service.getNewReleased(
             success: { mangas in
-                self.originalMangas = mangas
+                self.originalMangas = self.getSortedMangas(.DATE, mangas: mangas)
                 self.mangas = mangas
                 self.view?.showData()
             },
@@ -51,6 +51,21 @@ class NewReleasedPresenter: INewReleasedPresenter {
             mangas = originalMangas.filter { $0.title.lowercased().contains(lowercasedName) }
         }
         view?.showData()
+    }
+    
+    func sortMangas(type: SortType) {
+        originalMangas = getSortedMangas(type, mangas: originalMangas)
+        mangas = getSortedMangas(type, mangas: mangas)
+        view?.showData()
+    }
+    
+    private func getSortedMangas(_ type: SortType, mangas: [Manga]) -> [Manga] {
+        switch type {
+        case .DATE:
+            return mangas.sorted { $0.id < $1.id }
+        case .TITLE:
+            return mangas.sorted { $0.title < $1.title }
+        }
     }
     
 }

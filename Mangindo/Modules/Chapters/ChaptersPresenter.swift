@@ -14,6 +14,7 @@ class ChaptersPresenter: IChaptersPresenter {
     let mangaTitleId: String
     var chapters: [Chapter] = []
     var selectedChapterNumber: Int = 0
+    var reverseButtonTitle: String = "A→Z"
     
     init(view: IChaptersView, service: INetworkService, mangaTitleId: String) {
         self.view = view
@@ -40,5 +41,20 @@ class ChaptersPresenter: IChaptersPresenter {
     
     func updateSelectedChapterNumber(index: Int) {
         selectedChapterNumber = chapters[index].number
+    }
+    
+    func reverseChapters() {
+        chapters = chapters.reversed()
+        reverseButtonTitle = reverseButtonTitle == "A→Z" ? "Z→A" : "A→Z"
+        view?.showData()
+        view?.updateReverseButtonTitle()
+    }
+    
+    func getDisplayedNavTitle(_ title: String) -> String {
+        if title.count <= 13 {
+            return title
+        } else {
+            return "\(title.prefix(13)).."
+        }
     }
 }

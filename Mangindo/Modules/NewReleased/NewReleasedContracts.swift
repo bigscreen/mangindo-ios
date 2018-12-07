@@ -15,4 +15,9 @@ protocol INewReleasedPresenter {
     func fetchNewReleased()
     func selectManga(index: Int)
     func search(mangaName: String)
+    func sortMangas(type: SortType)
+}
+
+enum SortType {
+    case DATE, TITLE
 }

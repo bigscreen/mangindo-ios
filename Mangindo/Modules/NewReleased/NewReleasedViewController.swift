@@ -21,9 +21,8 @@ class NewReleasedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let emptyImage = UIImage()
-        self.navigationController?.navigationBar.shadowImage = emptyImage
-        self.navigationController?.navigationBar.setBackgroundImage(emptyImage, for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sort by", style: .plain, target: self, action: #selector(sortButtonTap))
         newReleaseCollectionView.register(UINib(nibName: newReleaseCellID, bundle: nil), forCellWithReuseIdentifier: newReleaseCellID)
         searchTextField.delegate = self
         presenter = NewReleasedPresenter(view: self, service: NetworkService.shared)
@@ -37,6 +36,18 @@ class NewReleasedViewController: UIViewController {
                 mangaTitleId: presenter.selectedTitleId
             )
         }
+    }
+    
+    @objc func sortButtonTap() {
+        let actionSheet = UIAlertController(title: "Select sort by", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Release Date", style: .default, handler: { _ in
+            self.presenter.sortMangas(type: .DATE)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Manga Title", style: .default, handler: { _ in
+            self.presenter.sortMangas(type: .TITLE)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(actionSheet, animated: true, completion: nil)
     }
 }
 
@@ -63,10 +74,12 @@ extension NewReleasedViewController: UITextFieldDelegate {
 extension NewReleasedViewController: INewReleasedView {
     
     func startLoading() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         loadingIndicator.startAnimating()
     }
     
     func stopLoading() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
         loadingIndicator.stopAnimating()
     }
     
@@ -75,7 +88,7 @@ extension NewReleasedViewController: INewReleasedView {
     }
     
     func showAlert(message: String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Reload", style: UIAlertActionStyle.default, handler: { action in
             self.presenter.fetchNewReleased()
